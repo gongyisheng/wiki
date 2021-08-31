@@ -1,0 +1,980 @@
+2021-08-18 14:59:34.100 INFO  org.hibernate.validator.internal.util.Version     :21   [32m                  [0;39m HV000001: Hibernate Validator 6.2.0.Final
+2021-08-18 14:59:34.110 INFO  com.orange_yishenggong.wiki.config.WikiApplication:55   [32m                  [0;39m Starting WikiApplication using Java 16.0.1 on LAPTOP-GE9IV29P with PID 20416 (C:\Users\Orange Meow\IdeaProjects\wiki\target\classes started by Orange Meow in C:\Users\Orange Meow\IdeaProjects\wiki)
+2021-08-18 14:59:34.111 INFO  com.orange_yishenggong.wiki.config.WikiApplication:663  [32m                  [0;39m No active profile set, falling back to default profiles: default
+2021-08-18 14:59:34.755 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :262  [32m                  [0;39m Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-08-18 14:59:34.759 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :132  [32m                  [0;39m Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-08-18 14:59:34.781 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :201  [32m                  [0;39m Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+2021-08-18 14:59:35.396 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 8888 (http)
+2021-08-18 14:59:35.405 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-8888"]
+2021-08-18 14:59:35.406 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-08-18 14:59:35.406 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-08-18 14:59:35.500 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-08-18 14:59:35.500 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :290  [32m                  [0;39m Root WebApplicationContext: initialization completed in 1339 ms
+2021-08-18 14:59:36.712 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Starting ProtocolHandler ["http-nio-8888"]
+2021-08-18 14:59:36.750 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 8888 (http) with context path ''
+2021-08-18 14:59:36.766 INFO  com.orange_yishenggong.wiki.config.WikiApplication:61   [32m                  [0;39m Started WikiApplication in 3.095 seconds (JVM running for 3.756)
+2021-08-18 14:59:36.768 INFO  o.s.boot.availability.ApplicationAvailabilityBean :75   [32m                  [0;39m Application availability state LivenessState changed to CORRECT
+2021-08-18 14:59:36.769 INFO  o.s.boot.availability.ApplicationAvailabilityBean :75   [32m                  [0;39m Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-08-18 14:59:36.770 INFO  com.orange_yishenggong.wiki.config.WikiApplication:22   [32m                  [0;39m 启动成功	:)
+2021-08-18 14:59:36.770 INFO  com.orange_yishenggong.wiki.config.WikiApplication:23   [32m                  [0;39m 地址:	http://127.0.0.1:8888
+2021-08-18 15:00:00.011 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324580147385344   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:00:00.028 INFO  com.zaxxer.hikari.HikariDataSource                :110  [32m324580147385344   [0;39m HikariPool-1 - Starting...
+2021-08-18 15:00:00.396 INFO  com.zaxxer.hikari.HikariDataSource                :123  [32m324580147385344   [0;39m HikariPool-1 - Start completed.
+2021-08-18 15:00:00.402 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324580147385344   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:00:00.417 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324580147385344   [0;39m ==> Parameters: 
+2021-08-18 15:00:00.461 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324580147385344   [0;39m <==    Updates: 4
+2021-08-18 15:00:00.463 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324580147385344   [0;39m 更新电子书下的文档数据结束，耗时：451毫秒
+2021-08-18 15:00:30.008 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324580638856192   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:00:30.009 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324580638856192   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:00:30.010 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324580638856192   [0;39m ==> Parameters: 
+2021-08-18 15:00:30.012 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324580638856192   [0;39m <==    Updates: 4
+2021-08-18 15:00:30.012 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324580638856192   [0;39m 更新电子书下的文档数据结束，耗时：4毫秒
+2021-08-18 15:01:00.005 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324581130327040   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:01:00.006 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324581130327040   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:01:00.007 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324581130327040   [0;39m ==> Parameters: 
+2021-08-18 15:01:00.008 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324581130327040   [0;39m <==    Updates: 4
+2021-08-18 15:01:00.009 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324581130327040   [0;39m 更新电子书下的文档数据结束，耗时：4毫秒
+2021-08-18 15:01:30.001 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324581621781504   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:01:30.002 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324581621781504   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:01:30.002 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324581621781504   [0;39m ==> Parameters: 
+2021-08-18 15:01:30.004 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324581621781504   [0;39m <==    Updates: 4
+2021-08-18 15:01:30.004 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324581621781504   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:02:00.008 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324582113416192   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:02:00.009 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324582113416192   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:02:00.010 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324582113416192   [0;39m ==> Parameters: 
+2021-08-18 15:02:00.011 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324582113416192   [0;39m <==    Updates: 4
+2021-08-18 15:02:00.012 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324582113416192   [0;39m 更新电子书下的文档数据结束，耗时：4毫秒
+2021-08-18 15:02:30.013 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324582605018112   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:02:30.014 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324582605018112   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:02:30.014 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324582605018112   [0;39m ==> Parameters: 
+2021-08-18 15:02:30.016 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324582605018112   [0;39m <==    Updates: 4
+2021-08-18 15:02:30.016 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324582605018112   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:03:00.003 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324583096374272   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:03:00.004 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324583096374272   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:03:00.005 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324583096374272   [0;39m ==> Parameters: 
+2021-08-18 15:03:00.006 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324583096374272   [0;39m <==    Updates: 4
+2021-08-18 15:03:00.006 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324583096374272   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:03:30.000 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324583587845120   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:03:30.001 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324583587845120   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:03:30.001 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324583587845120   [0;39m ==> Parameters: 
+2021-08-18 15:03:30.002 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324583587845120   [0;39m <==    Updates: 4
+2021-08-18 15:03:30.003 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324583587845120   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:04:00.010 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324584079528960   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:04:00.011 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324584079528960   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:04:00.012 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324584079528960   [0;39m ==> Parameters: 
+2021-08-18 15:04:00.013 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324584079528960   [0;39m <==    Updates: 4
+2021-08-18 15:04:00.014 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324584079528960   [0;39m 更新电子书下的文档数据结束，耗时：4毫秒
+2021-08-18 15:04:30.004 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324584570950656   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:04:30.005 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324584570950656   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:04:30.005 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324584570950656   [0;39m ==> Parameters: 
+2021-08-18 15:04:30.006 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324584570950656   [0;39m <==    Updates: 4
+2021-08-18 15:04:30.007 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324584570950656   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:04:35.987 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-18 15:04:35.987 INFO  org.springframework.web.servlet.DispatcherServlet :525  [32m                  [0;39m Initializing Servlet 'dispatcherServlet'
+2021-08-18 15:04:35.988 INFO  org.springframework.web.servlet.DispatcherServlet :547  [32m                  [0;39m Completed initialization in 0 ms
+2021-08-18 15:04:36.015 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :55   [32m324584669418496   [0;39m ------------- 开始 -------------
+2021-08-18 15:04:36.016 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :56   [32m324584669418496   [0;39m 请求地址: http://localhost:8888/category/all GET
+2021-08-18 15:04:36.016 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :57   [32m324584669418496   [0;39m 类名方法: com.orange_yishenggong.wiki.controller.CategoryController.all
+2021-08-18 15:04:36.017 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :58   [32m324584669418496   [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-08-18 15:04:36.023 INFO  c.o.wiki.websocket.WebSocketServer                :32   [32m                  [0;39m 有新连接：token：EiJvjHDq6C，session id：0，当前连接数：1
+2021-08-18 15:04:36.052 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :80   [32m324584669418496   [0;39m 请求参数: []
+2021-08-18 15:04:36.082 DEBUG c.o.wiki.mapper.CategoryMapper.selectByExample    :137  [32m324584669418496   [0;39m ==>  Preparing: select id, parent, `name`, sort from category order by sort asc
+2021-08-18 15:04:36.083 DEBUG c.o.wiki.mapper.CategoryMapper.selectByExample    :137  [32m324584669418496   [0;39m ==> Parameters: 
+2021-08-18 15:04:36.105 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584669418496   [0;39m <==    Columns: id, parent, name, sort
+2021-08-18 15:04:36.106 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584669418496   [0;39m <==        Row: 100, 0, 前端开发, 100
+2021-08-18 15:04:36.107 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584669418496   [0;39m <==        Row: 101, 100, Vue, 101
+2021-08-18 15:04:36.107 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584669418496   [0;39m <==        Row: 102, 100, Html, 102
+2021-08-18 15:04:36.107 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584669418496   [0;39m <==        Row: 200, 0, Java, 200
+2021-08-18 15:04:36.108 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584669418496   [0;39m <==        Row: 300, 0, MySql, 200
+2021-08-18 15:04:36.108 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584669418496   [0;39m <==        Row: 201, 200, 基础应用, 201
+2021-08-18 15:04:36.108 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584669418496   [0;39m <==        Row: 202, 200, 框架应用, 202
+2021-08-18 15:04:36.109 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584669418496   [0;39m <==        Row: 301, 300, 数据分析师, 301
+2021-08-18 15:04:36.109 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584669418496   [0;39m <==        Row: 302, 300, 数据工程师, 302
+2021-08-18 15:04:36.110 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584669418496   [0;39m <==        Row: 400, 0, 郭毛毛, 400
+2021-08-18 15:04:36.110 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584669418496   [0;39m <==        Row: 310978500236288, 400, 郭毛毛的大哥, 401
+2021-08-18 15:04:36.110 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584669418496   [0;39m <==        Row: 311011061306368, 400, 郭毛毛的二哥, 402
+2021-08-18 15:04:36.110 DEBUG c.o.wiki.mapper.CategoryMapper.selectByExample    :137  [32m324584669418496   [0;39m <==      Total: 12
+2021-08-18 15:04:36.135 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :92   [32m324584669418496   [0;39m 返回结果: {"content":[{"id":100,"name":"前端开发","parent":0,"sort":100},{"id":101,"name":"Vue","parent":100,"sort":101},{"id":102,"name":"Html","parent":100,"sort":102},{"id":200,"name":"Java","parent":0,"sort":200},{"id":300,"name":"MySql","parent":0,"sort":200},{"id":201,"name":"基础应用","parent":200,"sort":201},{"id":202,"name":"框架应用","parent":200,"sort":202},{"id":301,"name":"数据分析师","parent":300,"sort":301},{"id":302,"name":"数据工程师","parent":300,"sort":302},{"id":400,"name":"郭毛毛","parent":0,"sort":400},{"id":310978500236288,"name":"郭毛毛的大哥","parent":400,"sort":401},{"id":311011061306368,"name":"郭毛毛的二哥","parent":400,"sort":402}],"success":true}
+2021-08-18 15:04:36.135 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :93   [32m324584669418496   [0;39m ------------- 结束 耗时：121 ms -------------
+2021-08-18 15:04:41.260 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :55   [32m324584755368960   [0;39m ------------- 开始 -------------
+2021-08-18 15:04:41.260 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :56   [32m324584755368960   [0;39m 请求地址: http://localhost:8888/user/login POST
+2021-08-18 15:04:41.261 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :57   [32m324584755368960   [0;39m 类名方法: com.orange_yishenggong.wiki.controller.UserController.login
+2021-08-18 15:04:41.261 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :58   [32m324584755368960   [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-08-18 15:04:41.262 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :80   [32m324584755368960   [0;39m 请求参数: [{"loginName":"test1"}]
+2021-08-18 15:04:41.274 DEBUG c.o.wiki.mapper.UserMapper.selectByExample        :137  [32m324584755368960   [0;39m ==>  Preparing: select id, login_name, nickname, `password` from user WHERE ( login_name = ? )
+2021-08-18 15:04:41.275 DEBUG c.o.wiki.mapper.UserMapper.selectByExample        :137  [32m324584755368960   [0;39m ==> Parameters: test1(String)
+2021-08-18 15:04:41.284 TRACE c.o.wiki.mapper.UserMapper.selectByExample        :143  [32m324584755368960   [0;39m <==    Columns: id, login_name, nickname, password
+2021-08-18 15:04:41.284 TRACE c.o.wiki.mapper.UserMapper.selectByExample        :143  [32m324584755368960   [0;39m <==        Row: 319043990279168, test1, ceshi1, 7354a1d413535a6c0dc5c209e198d799
+2021-08-18 15:04:41.285 DEBUG c.o.wiki.mapper.UserMapper.selectByExample        :137  [32m324584755368960   [0;39m <==      Total: 1
+2021-08-18 15:04:41.289 INFO  c.o.wiki.controller.UserController                :77   [32m324584755368960   [0;39m 生成单点登录token:324584755844096,并放入redis
+2021-08-18 15:04:41.903 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :92   [32m324584755368960   [0;39m 返回结果: {"content":{"id":319043990279168,"loginName":"test1","nickname":"ceshi1","token":"324584755844096"},"success":true}
+2021-08-18 15:04:41.904 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :93   [32m324584755368960   [0;39m ------------- 结束 耗时：644 ms -------------
+2021-08-18 15:04:44.233 INFO  c.o.wiki.interceptor.LoginInterceptor             :29   [32m                  [0;39m ------------- LoginInterceptor 开始 -------------
+2021-08-18 15:04:44.234 INFO  c.o.wiki.interceptor.LoginInterceptor             :65   [32m                  [0;39m ------------- LoginInterceptor 结束 耗时：1 ms -------------
+2021-08-18 15:04:44.237 INFO  c.o.wiki.interceptor.LoginInterceptor             :29   [32m                  [0;39m ------------- LoginInterceptor 开始 -------------
+2021-08-18 15:04:44.238 INFO  c.o.wiki.interceptor.LoginInterceptor             :40   [32m                  [0;39m 接口登录拦截：，path：http://localhost:8888/user/list
+2021-08-18 15:04:44.238 INFO  c.o.wiki.interceptor.LoginInterceptor             :44   [32m                  [0;39m 登录校验开始，token：324584755844096
+2021-08-18 15:04:44.283 INFO  c.o.wiki.interceptor.LoginInterceptor             :56   [32m                  [0;39m 已登录：{"id":319043990279168,"loginName":"test1","nickname":"ceshi1","token":"324584755844096"}
+2021-08-18 15:04:44.293 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :55   [32m324584805061632   [0;39m ------------- 开始 -------------
+2021-08-18 15:04:44.294 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :56   [32m324584805061632   [0;39m 请求地址: http://localhost:8888/user/list GET
+2021-08-18 15:04:44.294 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :57   [32m324584805061632   [0;39m 类名方法: com.orange_yishenggong.wiki.controller.UserController.list
+2021-08-18 15:04:44.294 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :58   [32m324584805061632   [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-08-18 15:04:44.296 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :80   [32m324584805061632   [0;39m 请求参数: [{"page":0,"size":0}]
+2021-08-18 15:04:44.312 DEBUG c.o.wiki.mapper.UserMapper.selectByExample_COUNT  :137  [32m324584805061632   [0;39m ==>  Preparing: SELECT count(0) FROM user
+2021-08-18 15:04:44.312 DEBUG c.o.wiki.mapper.UserMapper.selectByExample_COUNT  :137  [32m324584805061632   [0;39m ==> Parameters: 
+2021-08-18 15:04:44.316 TRACE c.o.wiki.mapper.UserMapper.selectByExample_COUNT  :143  [32m324584805061632   [0;39m <==    Columns: count(0)
+2021-08-18 15:04:44.316 TRACE c.o.wiki.mapper.UserMapper.selectByExample_COUNT  :143  [32m324584805061632   [0;39m <==        Row: 4
+2021-08-18 15:04:44.317 DEBUG c.o.wiki.mapper.UserMapper.selectByExample_COUNT  :137  [32m324584805061632   [0;39m <==      Total: 1
+2021-08-18 15:04:44.317 DEBUG c.o.wiki.mapper.UserMapper.selectByExample        :137  [32m324584805061632   [0;39m ==>  Preparing: select id, login_name, nickname, `password` from user
+2021-08-18 15:04:44.318 DEBUG c.o.wiki.mapper.UserMapper.selectByExample        :137  [32m324584805061632   [0;39m ==> Parameters: 
+2021-08-18 15:04:44.319 TRACE c.o.wiki.mapper.UserMapper.selectByExample        :143  [32m324584805061632   [0;39m <==    Columns: id, login_name, nickname, password
+2021-08-18 15:04:44.319 TRACE c.o.wiki.mapper.UserMapper.selectByExample        :143  [32m324584805061632   [0;39m <==        Row: 319043990279168, test1, ceshi1, 7354a1d413535a6c0dc5c209e198d799
+2021-08-18 15:04:44.319 TRACE c.o.wiki.mapper.UserMapper.selectByExample        :143  [32m324584805061632   [0;39m <==        Row: 319044377990144, test2, ceshi2222, 7354a1d413535a6c0dc5c209e198d799
+2021-08-18 15:04:44.320 TRACE c.o.wiki.mapper.UserMapper.selectByExample        :143  [32m324584805061632   [0;39m <==        Row: 319162529829888, test3, ceshi1, ce321b7440c1848ce25c92363bded352
+2021-08-18 15:04:44.320 TRACE c.o.wiki.mapper.UserMapper.selectByExample        :143  [32m324584805061632   [0;39m <==        Row: 319181219910656, test4, ceshi4, 898f1ffa36e20addb8848d09bfe60d75
+2021-08-18 15:04:44.320 DEBUG c.o.wiki.mapper.UserMapper.selectByExample        :137  [32m324584805061632   [0;39m <==      Total: 4
+2021-08-18 15:04:44.321 INFO  com.orange_yishenggong.wiki.service.UserService   :49   [32m324584805061632   [0;39m 总行数:4
+2021-08-18 15:04:44.321 INFO  com.orange_yishenggong.wiki.service.UserService   :50   [32m324584805061632   [0;39m 总页数:0
+2021-08-18 15:04:44.325 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :92   [32m324584805061632   [0;39m 返回结果: {"content":{"list":[{"id":319043990279168,"loginName":"test1","nickname":"ceshi1"},{"id":319044377990144,"loginName":"test2","nickname":"ceshi2222"},{"id":319162529829888,"loginName":"test3","nickname":"ceshi1"},{"id":319181219910656,"loginName":"test4","nickname":"ceshi4"}],"total":4},"success":true}
+2021-08-18 15:04:44.325 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :93   [32m324584805061632   [0;39m ------------- 结束 耗时：32 ms -------------
+2021-08-18 15:04:44.328 INFO  c.o.wiki.interceptor.LoginInterceptor             :65   [32m324584805061632   [0;39m ------------- LoginInterceptor 结束 耗时：91 ms -------------
+2021-08-18 15:04:45.021 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :55   [32m324584816989184   [0;39m ------------- 开始 -------------
+2021-08-18 15:04:45.021 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :56   [32m324584816989184   [0;39m 请求地址: http://localhost:8888/category/all GET
+2021-08-18 15:04:45.021 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :57   [32m324584816989184   [0;39m 类名方法: com.orange_yishenggong.wiki.controller.CategoryController.all
+2021-08-18 15:04:45.021 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :58   [32m324584816989184   [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-08-18 15:04:45.021 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :80   [32m324584816989184   [0;39m 请求参数: []
+2021-08-18 15:04:45.022 DEBUG c.o.wiki.mapper.CategoryMapper.selectByExample    :137  [32m324584816989184   [0;39m ==>  Preparing: select id, parent, `name`, sort from category order by sort asc
+2021-08-18 15:04:45.022 DEBUG c.o.wiki.mapper.CategoryMapper.selectByExample    :137  [32m324584816989184   [0;39m ==> Parameters: 
+2021-08-18 15:04:45.023 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584816989184   [0;39m <==    Columns: id, parent, name, sort
+2021-08-18 15:04:45.023 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584816989184   [0;39m <==        Row: 100, 0, 前端开发, 100
+2021-08-18 15:04:45.024 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584816989184   [0;39m <==        Row: 101, 100, Vue, 101
+2021-08-18 15:04:45.024 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584816989184   [0;39m <==        Row: 102, 100, Html, 102
+2021-08-18 15:04:45.024 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584816989184   [0;39m <==        Row: 200, 0, Java, 200
+2021-08-18 15:04:45.025 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584816989184   [0;39m <==        Row: 300, 0, MySql, 200
+2021-08-18 15:04:45.025 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584816989184   [0;39m <==        Row: 201, 200, 基础应用, 201
+2021-08-18 15:04:45.025 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584816989184   [0;39m <==        Row: 202, 200, 框架应用, 202
+2021-08-18 15:04:45.025 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584816989184   [0;39m <==        Row: 301, 300, 数据分析师, 301
+2021-08-18 15:04:45.025 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584816989184   [0;39m <==        Row: 302, 300, 数据工程师, 302
+2021-08-18 15:04:45.026 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584816989184   [0;39m <==        Row: 400, 0, 郭毛毛, 400
+2021-08-18 15:04:45.026 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584816989184   [0;39m <==        Row: 310978500236288, 400, 郭毛毛的大哥, 401
+2021-08-18 15:04:45.026 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584816989184   [0;39m <==        Row: 311011061306368, 400, 郭毛毛的二哥, 402
+2021-08-18 15:04:45.026 DEBUG c.o.wiki.mapper.CategoryMapper.selectByExample    :137  [32m324584816989184   [0;39m <==      Total: 12
+2021-08-18 15:04:45.029 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :92   [32m324584816989184   [0;39m 返回结果: {"content":[{"id":100,"name":"前端开发","parent":0,"sort":100},{"id":101,"name":"Vue","parent":100,"sort":101},{"id":102,"name":"Html","parent":100,"sort":102},{"id":200,"name":"Java","parent":0,"sort":200},{"id":300,"name":"MySql","parent":0,"sort":200},{"id":201,"name":"基础应用","parent":200,"sort":201},{"id":202,"name":"框架应用","parent":200,"sort":202},{"id":301,"name":"数据分析师","parent":300,"sort":301},{"id":302,"name":"数据工程师","parent":300,"sort":302},{"id":400,"name":"郭毛毛","parent":0,"sort":400},{"id":310978500236288,"name":"郭毛毛的大哥","parent":400,"sort":401},{"id":311011061306368,"name":"郭毛毛的二哥","parent":400,"sort":402}],"success":true}
+2021-08-18 15:04:45.029 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :93   [32m324584816989184   [0;39m ------------- 结束 耗时：8 ms -------------
+2021-08-18 15:04:45.046 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :55   [32m324584817398784   [0;39m ------------- 开始 -------------
+2021-08-18 15:04:45.046 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :56   [32m324584817398784   [0;39m 请求地址: http://localhost:8888/ebook/list GET
+2021-08-18 15:04:45.046 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :57   [32m324584817398784   [0;39m 类名方法: com.orange_yishenggong.wiki.controller.EbookController.list
+2021-08-18 15:04:45.046 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :58   [32m324584817398784   [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-08-18 15:04:45.048 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :80   [32m324584817398784   [0;39m 请求参数: [{"page":1,"size":5}]
+2021-08-18 15:04:45.052 DEBUG c.o.wiki.mapper.EbookMapper.selectByExample_COUNT :137  [32m324584817398784   [0;39m ==>  Preparing: SELECT count(0) FROM ebook
+2021-08-18 15:04:45.053 DEBUG c.o.wiki.mapper.EbookMapper.selectByExample_COUNT :137  [32m324584817398784   [0;39m ==> Parameters: 
+2021-08-18 15:04:45.054 TRACE c.o.wiki.mapper.EbookMapper.selectByExample_COUNT :143  [32m324584817398784   [0;39m <==    Columns: count(0)
+2021-08-18 15:04:45.054 TRACE c.o.wiki.mapper.EbookMapper.selectByExample_COUNT :143  [32m324584817398784   [0;39m <==        Row: 17
+2021-08-18 15:04:45.054 DEBUG c.o.wiki.mapper.EbookMapper.selectByExample_COUNT :137  [32m324584817398784   [0;39m <==      Total: 1
+2021-08-18 15:04:45.055 DEBUG c.o.wiki.mapper.EbookMapper.selectByExample       :137  [32m324584817398784   [0;39m ==>  Preparing: select id, `name`, category1_id, category2_id, description, cover, doc_count, view_count, vote_count from ebook LIMIT ?
+2021-08-18 15:04:45.055 DEBUG c.o.wiki.mapper.EbookMapper.selectByExample       :137  [32m324584817398784   [0;39m ==> Parameters: 5(Integer)
+2021-08-18 15:04:45.057 TRACE c.o.wiki.mapper.EbookMapper.selectByExample       :143  [32m324584817398784   [0;39m <==    Columns: id, name, category1_id, category2_id, description, cover, doc_count, view_count, vote_count
+2021-08-18 15:04:45.057 TRACE c.o.wiki.mapper.EbookMapper.selectByExample       :143  [32m324584817398784   [0;39m <==        Row: 2, JavaScript入门教程, 100, 102, JavaScript和Java是什么关系呢, /image/cover2.png, 5, 34, 2
+2021-08-18 15:04:45.058 TRACE c.o.wiki.mapper.EbookMapper.selectByExample       :143  [32m324584817398784   [0;39m <==        Row: 3, SpringBoot入门教程, 200, 202, SpringBoot你会用吗，包你学了还是不会, /image/cover3.jpg, 1, 3, 0
+2021-08-18 15:04:45.058 TRACE c.o.wiki.mapper.EbookMapper.selectByExample       :143  [32m324584817398784   [0;39m <==        Row: 4, Vue入门教程, 100, 101, Vue带你写页面, /image/cover4.jpg, 1, 8, 3
+2021-08-18 15:04:45.058 TRACE c.o.wiki.mapper.EbookMapper.selectByExample       :143  [32m324584817398784   [0;39m <==        Row: 5, Java入门教程, 200, 201, 如果月薪2000以下的你想提高收入, /image/cover5.jpg, 23924, 8888888, 999999999
+2021-08-18 15:04:45.058 TRACE c.o.wiki.mapper.EbookMapper.selectByExample       :143  [32m324584817398784   [0;39m <==        Row: 7, 橘猪染色教程, 400, 310978500236288, 想拥有一只橘橘胖胖的猪吗, /image/cover7.jpg, 4, 17, 3
+2021-08-18 15:04:45.058 DEBUG c.o.wiki.mapper.EbookMapper.selectByExample       :137  [32m324584817398784   [0;39m <==      Total: 5
+2021-08-18 15:04:45.058 INFO  com.orange_yishenggong.wiki.service.EbookService  :46   [32m324584817398784   [0;39m 总行数:17
+2021-08-18 15:04:45.059 INFO  com.orange_yishenggong.wiki.service.EbookService  :47   [32m324584817398784   [0;39m 总页数:4
+2021-08-18 15:04:45.065 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :92   [32m324584817398784   [0;39m 返回结果: {"content":{"list":[{"category1Id":100,"category2Id":102,"cover":"/image/cover2.png","description":"JavaScript和Java是什么关系呢","docCount":5,"id":2,"name":"JavaScript入门教程","viewCount":34,"voteCount":2},{"category1Id":200,"category2Id":202,"cover":"/image/cover3.jpg","description":"SpringBoot你会用吗，包你学了还是不会","docCount":1,"id":3,"name":"SpringBoot入门教程","viewCount":3,"voteCount":0},{"category1Id":100,"category2Id":101,"cover":"/image/cover4.jpg","description":"Vue带你写页面","docCount":1,"id":4,"name":"Vue入门教程","viewCount":8,"voteCount":3},{"category1Id":200,"category2Id":201,"cover":"/image/cover5.jpg","description":"如果月薪2000以下的你想提高收入","docCount":23924,"id":5,"name":"Java入门教程","viewCount":8888888,"voteCount":999999999},{"category1Id":400,"category2Id":310978500236288,"cover":"/image/cover7.jpg","description":"想拥有一只橘橘胖胖的猪吗","docCount":4,"id":7,"name":"橘猪染色教程","viewCount":17,"voteCount":3}],"total":17},"success":true}
+2021-08-18 15:04:45.065 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :93   [32m324584817398784   [0;39m ------------- 结束 耗时：19 ms -------------
+2021-08-18 15:04:45.568 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :55   [32m324584825951232   [0;39m ------------- 开始 -------------
+2021-08-18 15:04:45.569 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :56   [32m324584825951232   [0;39m 请求地址: http://localhost:8888/category/all GET
+2021-08-18 15:04:45.569 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :57   [32m324584825951232   [0;39m 类名方法: com.orange_yishenggong.wiki.controller.CategoryController.all
+2021-08-18 15:04:45.569 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :58   [32m324584825951232   [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-08-18 15:04:45.569 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :80   [32m324584825951232   [0;39m 请求参数: []
+2021-08-18 15:04:45.570 DEBUG c.o.wiki.mapper.CategoryMapper.selectByExample    :137  [32m324584825951232   [0;39m ==>  Preparing: select id, parent, `name`, sort from category order by sort asc
+2021-08-18 15:04:45.570 DEBUG c.o.wiki.mapper.CategoryMapper.selectByExample    :137  [32m324584825951232   [0;39m ==> Parameters: 
+2021-08-18 15:04:45.572 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584825951232   [0;39m <==    Columns: id, parent, name, sort
+2021-08-18 15:04:45.572 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584825951232   [0;39m <==        Row: 100, 0, 前端开发, 100
+2021-08-18 15:04:45.572 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584825951232   [0;39m <==        Row: 101, 100, Vue, 101
+2021-08-18 15:04:45.572 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584825951232   [0;39m <==        Row: 102, 100, Html, 102
+2021-08-18 15:04:45.572 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584825951232   [0;39m <==        Row: 200, 0, Java, 200
+2021-08-18 15:04:45.572 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584825951232   [0;39m <==        Row: 300, 0, MySql, 200
+2021-08-18 15:04:45.572 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584825951232   [0;39m <==        Row: 201, 200, 基础应用, 201
+2021-08-18 15:04:45.573 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584825951232   [0;39m <==        Row: 202, 200, 框架应用, 202
+2021-08-18 15:04:45.573 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584825951232   [0;39m <==        Row: 301, 300, 数据分析师, 301
+2021-08-18 15:04:45.573 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584825951232   [0;39m <==        Row: 302, 300, 数据工程师, 302
+2021-08-18 15:04:45.573 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584825951232   [0;39m <==        Row: 400, 0, 郭毛毛, 400
+2021-08-18 15:04:45.573 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584825951232   [0;39m <==        Row: 310978500236288, 400, 郭毛毛的大哥, 401
+2021-08-18 15:04:45.573 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584825951232   [0;39m <==        Row: 311011061306368, 400, 郭毛毛的二哥, 402
+2021-08-18 15:04:45.573 DEBUG c.o.wiki.mapper.CategoryMapper.selectByExample    :137  [32m324584825951232   [0;39m <==      Total: 12
+2021-08-18 15:04:45.574 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :92   [32m324584825951232   [0;39m 返回结果: {"content":[{"id":100,"name":"前端开发","parent":0,"sort":100},{"id":101,"name":"Vue","parent":100,"sort":101},{"id":102,"name":"Html","parent":100,"sort":102},{"id":200,"name":"Java","parent":0,"sort":200},{"id":300,"name":"MySql","parent":0,"sort":200},{"id":201,"name":"基础应用","parent":200,"sort":201},{"id":202,"name":"框架应用","parent":200,"sort":202},{"id":301,"name":"数据分析师","parent":300,"sort":301},{"id":302,"name":"数据工程师","parent":300,"sort":302},{"id":400,"name":"郭毛毛","parent":0,"sort":400},{"id":310978500236288,"name":"郭毛毛的大哥","parent":400,"sort":401},{"id":311011061306368,"name":"郭毛毛的二哥","parent":400,"sort":402}],"success":true}
+2021-08-18 15:04:45.574 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :93   [32m324584825951232   [0;39m ------------- 结束 耗时：6 ms -------------
+2021-08-18 15:04:47.084 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :55   [32m324584850772992   [0;39m ------------- 开始 -------------
+2021-08-18 15:04:47.084 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :56   [32m324584850772992   [0;39m 请求地址: http://localhost:8888/category/all GET
+2021-08-18 15:04:47.084 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :57   [32m324584850772992   [0;39m 类名方法: com.orange_yishenggong.wiki.controller.CategoryController.all
+2021-08-18 15:04:47.084 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :58   [32m324584850772992   [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-08-18 15:04:47.085 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :80   [32m324584850772992   [0;39m 请求参数: []
+2021-08-18 15:04:47.086 DEBUG c.o.wiki.mapper.CategoryMapper.selectByExample    :137  [32m324584850772992   [0;39m ==>  Preparing: select id, parent, `name`, sort from category order by sort asc
+2021-08-18 15:04:47.087 DEBUG c.o.wiki.mapper.CategoryMapper.selectByExample    :137  [32m324584850772992   [0;39m ==> Parameters: 
+2021-08-18 15:04:47.088 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584850772992   [0;39m <==    Columns: id, parent, name, sort
+2021-08-18 15:04:47.088 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584850772992   [0;39m <==        Row: 100, 0, 前端开发, 100
+2021-08-18 15:04:47.088 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584850772992   [0;39m <==        Row: 101, 100, Vue, 101
+2021-08-18 15:04:47.089 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584850772992   [0;39m <==        Row: 102, 100, Html, 102
+2021-08-18 15:04:47.089 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584850772992   [0;39m <==        Row: 200, 0, Java, 200
+2021-08-18 15:04:47.089 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584850772992   [0;39m <==        Row: 300, 0, MySql, 200
+2021-08-18 15:04:47.089 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584850772992   [0;39m <==        Row: 201, 200, 基础应用, 201
+2021-08-18 15:04:47.089 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584850772992   [0;39m <==        Row: 202, 200, 框架应用, 202
+2021-08-18 15:04:47.090 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584850772992   [0;39m <==        Row: 301, 300, 数据分析师, 301
+2021-08-18 15:04:47.090 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584850772992   [0;39m <==        Row: 302, 300, 数据工程师, 302
+2021-08-18 15:04:47.090 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584850772992   [0;39m <==        Row: 400, 0, 郭毛毛, 400
+2021-08-18 15:04:47.090 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584850772992   [0;39m <==        Row: 310978500236288, 400, 郭毛毛的大哥, 401
+2021-08-18 15:04:47.090 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584850772992   [0;39m <==        Row: 311011061306368, 400, 郭毛毛的二哥, 402
+2021-08-18 15:04:47.091 DEBUG c.o.wiki.mapper.CategoryMapper.selectByExample    :137  [32m324584850772992   [0;39m <==      Total: 12
+2021-08-18 15:04:47.091 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :92   [32m324584850772992   [0;39m 返回结果: {"content":[{"id":100,"name":"前端开发","parent":0,"sort":100},{"id":101,"name":"Vue","parent":100,"sort":101},{"id":102,"name":"Html","parent":100,"sort":102},{"id":200,"name":"Java","parent":0,"sort":200},{"id":300,"name":"MySql","parent":0,"sort":200},{"id":201,"name":"基础应用","parent":200,"sort":201},{"id":202,"name":"框架应用","parent":200,"sort":202},{"id":301,"name":"数据分析师","parent":300,"sort":301},{"id":302,"name":"数据工程师","parent":300,"sort":302},{"id":400,"name":"郭毛毛","parent":0,"sort":400},{"id":310978500236288,"name":"郭毛毛的大哥","parent":400,"sort":401},{"id":311011061306368,"name":"郭毛毛的二哥","parent":400,"sort":402}],"success":true}
+2021-08-18 15:04:47.091 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :93   [32m324584850772992   [0;39m ------------- 结束 耗时：8 ms -------------
+2021-08-18 15:04:48.875 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :55   [32m324584880133120   [0;39m ------------- 开始 -------------
+2021-08-18 15:04:48.876 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :56   [32m324584880133120   [0;39m 请求地址: http://localhost:8888/ebook/list GET
+2021-08-18 15:04:48.876 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :57   [32m324584880133120   [0;39m 类名方法: com.orange_yishenggong.wiki.controller.EbookController.list
+2021-08-18 15:04:48.876 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :58   [32m324584880133120   [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-08-18 15:04:48.876 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :80   [32m324584880133120   [0;39m 请求参数: [{"categoryId2":101,"page":1,"size":1000}]
+2021-08-18 15:04:48.880 DEBUG c.o.wiki.mapper.EbookMapper.selectByExample_COUNT :137  [32m324584880133120   [0;39m ==>  Preparing: SELECT count(0) FROM ebook WHERE (category2_id = ?)
+2021-08-18 15:04:48.881 DEBUG c.o.wiki.mapper.EbookMapper.selectByExample_COUNT :137  [32m324584880133120   [0;39m ==> Parameters: 101(Long)
+2021-08-18 15:04:48.883 TRACE c.o.wiki.mapper.EbookMapper.selectByExample_COUNT :143  [32m324584880133120   [0;39m <==    Columns: count(0)
+2021-08-18 15:04:48.883 TRACE c.o.wiki.mapper.EbookMapper.selectByExample_COUNT :143  [32m324584880133120   [0;39m <==        Row: 1
+2021-08-18 15:04:48.883 DEBUG c.o.wiki.mapper.EbookMapper.selectByExample_COUNT :137  [32m324584880133120   [0;39m <==      Total: 1
+2021-08-18 15:04:48.884 DEBUG c.o.wiki.mapper.EbookMapper.selectByExample       :137  [32m324584880133120   [0;39m ==>  Preparing: select id, `name`, category1_id, category2_id, description, cover, doc_count, view_count, vote_count from ebook WHERE ( category2_id = ? ) LIMIT ?
+2021-08-18 15:04:48.884 DEBUG c.o.wiki.mapper.EbookMapper.selectByExample       :137  [32m324584880133120   [0;39m ==> Parameters: 101(Long), 1000(Integer)
+2021-08-18 15:04:48.885 TRACE c.o.wiki.mapper.EbookMapper.selectByExample       :143  [32m324584880133120   [0;39m <==    Columns: id, name, category1_id, category2_id, description, cover, doc_count, view_count, vote_count
+2021-08-18 15:04:48.885 TRACE c.o.wiki.mapper.EbookMapper.selectByExample       :143  [32m324584880133120   [0;39m <==        Row: 4, Vue入门教程, 100, 101, Vue带你写页面, /image/cover4.jpg, 1, 8, 3
+2021-08-18 15:04:48.885 DEBUG c.o.wiki.mapper.EbookMapper.selectByExample       :137  [32m324584880133120   [0;39m <==      Total: 1
+2021-08-18 15:04:48.885 INFO  com.orange_yishenggong.wiki.service.EbookService  :46   [32m324584880133120   [0;39m 总行数:1
+2021-08-18 15:04:48.885 INFO  com.orange_yishenggong.wiki.service.EbookService  :47   [32m324584880133120   [0;39m 总页数:1
+2021-08-18 15:04:48.886 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :92   [32m324584880133120   [0;39m 返回结果: {"content":{"list":[{"category1Id":100,"category2Id":101,"cover":"/image/cover4.jpg","description":"Vue带你写页面","docCount":1,"id":4,"name":"Vue入门教程","viewCount":8,"voteCount":3}],"total":1},"success":true}
+2021-08-18 15:04:48.886 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :93   [32m324584880133120   [0;39m ------------- 结束 耗时：11 ms -------------
+2021-08-18 15:04:49.772 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :55   [32m324584894829568   [0;39m ------------- 开始 -------------
+2021-08-18 15:04:49.773 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :56   [32m324584894829568   [0;39m 请求地址: http://localhost:8888/doc/all/4 GET
+2021-08-18 15:04:49.773 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :57   [32m324584894829568   [0;39m 类名方法: com.orange_yishenggong.wiki.controller.DocController.all
+2021-08-18 15:04:49.773 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :58   [32m324584894829568   [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-08-18 15:04:49.773 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :80   [32m324584894829568   [0;39m 请求参数: [4]
+2021-08-18 15:04:49.778 DEBUG c.o.wiki.mapper.DocMapper.selectByExample         :137  [32m324584894829568   [0;39m ==>  Preparing: select id, parent, ebook_id, `name`, sort, view_count, vote_count from doc WHERE ( ebook_id = ? ) order by sort asc
+2021-08-18 15:04:49.779 DEBUG c.o.wiki.mapper.DocMapper.selectByExample         :137  [32m324584894829568   [0;39m ==> Parameters: 4(Long)
+2021-08-18 15:04:49.779 TRACE c.o.wiki.mapper.DocMapper.selectByExample         :143  [32m324584894829568   [0;39m <==    Columns: id, parent, ebook_id, name, sort, view_count, vote_count
+2021-08-18 15:04:49.779 TRACE c.o.wiki.mapper.DocMapper.selectByExample         :143  [32m324584894829568   [0;39m <==        Row: 318234997675008, 0, 4, test, 1, 8, 3
+2021-08-18 15:04:49.780 DEBUG c.o.wiki.mapper.DocMapper.selectByExample         :137  [32m324584894829568   [0;39m <==      Total: 1
+2021-08-18 15:04:49.785 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :92   [32m324584894829568   [0;39m 返回结果: {"content":[{"ebookId":4,"id":318234997675008,"name":"test","parent":0,"sort":1,"viewCount":8,"voteCount":3}],"success":true}
+2021-08-18 15:04:49.785 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :93   [32m324584894829568   [0;39m ------------- 结束 耗时：13 ms -------------
+2021-08-18 15:04:49.798 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :55   [32m324584895255552   [0;39m ------------- 开始 -------------
+2021-08-18 15:04:49.798 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :56   [32m324584895255552   [0;39m 请求地址: http://localhost:8888/doc/content/318234997675008 GET
+2021-08-18 15:04:49.798 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :57   [32m324584895255552   [0;39m 类名方法: com.orange_yishenggong.wiki.controller.DocController.content
+2021-08-18 15:04:49.798 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :58   [32m324584895255552   [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-08-18 15:04:49.798 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :80   [32m324584895255552   [0;39m 请求参数: [318234997675008]
+2021-08-18 15:04:49.799 DEBUG c.o.wiki.mapper.ContentMapper.selectByPrimaryKey  :137  [32m324584895255552   [0;39m ==>  Preparing: select id , content from content where id = ?
+2021-08-18 15:04:49.799 DEBUG c.o.wiki.mapper.ContentMapper.selectByPrimaryKey  :137  [32m324584895255552   [0;39m ==> Parameters: 318234997675008(Long)
+2021-08-18 15:04:49.804 TRACE c.o.wiki.mapper.ContentMapper.selectByPrimaryKey  :143  [32m324584895255552   [0;39m <==    Columns: id, content
+2021-08-18 15:04:49.804 TRACE c.o.wiki.mapper.ContentMapper.selectByPrimaryKey  :143  [32m324584895255552   [0;39m <==        Row: 318234997675008, <<BLOB>>
+2021-08-18 15:04:49.804 DEBUG c.o.wiki.mapper.ContentMapper.selectByPrimaryKey  :137  [32m324584895255552   [0;39m <==      Total: 1
+2021-08-18 15:04:49.805 DEBUG c.o.wiki.mapper.DocMapperCust.incrViewCount       :137  [32m324584895255552   [0;39m ==>  Preparing: update doc set view_count = view_count+1 where id = ?
+2021-08-18 15:04:49.805 DEBUG c.o.wiki.mapper.DocMapperCust.incrViewCount       :137  [32m324584895255552   [0;39m ==> Parameters: 318234997675008(Long)
+2021-08-18 15:04:49.819 DEBUG c.o.wiki.mapper.DocMapperCust.incrViewCount       :137  [32m324584895255552   [0;39m <==    Updates: 1
+2021-08-18 15:04:49.820 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :92   [32m324584895255552   [0;39m 返回结果: {"content":"<p>test</p>","success":true}
+2021-08-18 15:04:49.820 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :93   [32m324584895255552   [0;39m ------------- 结束 耗时：22 ms -------------
+2021-08-18 15:04:51.508 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :55   [32m324584923272192   [0;39m ------------- 开始 -------------
+2021-08-18 15:04:51.509 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :56   [32m324584923272192   [0;39m 请求地址: http://localhost:8888/doc/vote/318234997675008 GET
+2021-08-18 15:04:51.509 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :57   [32m324584923272192   [0;39m 类名方法: com.orange_yishenggong.wiki.controller.DocController.vote
+2021-08-18 15:04:51.509 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :58   [32m324584923272192   [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-08-18 15:04:51.509 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :80   [32m324584923272192   [0;39m 请求参数: [318234997675008]
+2021-08-18 15:04:51.545 INFO  com.orange_yishenggong.wiki.util.RedisUtil        :31   [32m324584923272192   [0;39m key不存在，放入：DOC_VOTE318234997675008_0:0:0:0:0:0:0:1，过期 86400 秒
+2021-08-18 15:04:51.579 DEBUG c.o.wiki.mapper.DocMapperCust.incrVoteCount       :137  [32m324584923272192   [0;39m ==>  Preparing: update doc set vote_count = vote_count+1 where id = ?
+2021-08-18 15:04:51.580 DEBUG c.o.wiki.mapper.DocMapperCust.incrVoteCount       :137  [32m324584923272192   [0;39m ==> Parameters: 318234997675008(Long)
+2021-08-18 15:04:51.584 DEBUG c.o.wiki.mapper.DocMapperCust.incrVoteCount       :137  [32m324584923272192   [0;39m <==    Updates: 1
+2021-08-18 15:04:51.584 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :92   [32m324584923272192   [0;39m 返回结果: {"success":true}
+2021-08-18 15:04:51.584 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :93   [32m324584923272192   [0;39m ------------- 结束 耗时：76 ms -------------
+2021-08-18 15:04:52.906 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :55   [32m324584946177024   [0;39m ------------- 开始 -------------
+2021-08-18 15:04:52.907 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :56   [32m324584946177024   [0;39m 请求地址: http://localhost:8888/doc/vote/318234997675008 GET
+2021-08-18 15:04:52.907 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :57   [32m324584946177024   [0;39m 类名方法: com.orange_yishenggong.wiki.controller.DocController.vote
+2021-08-18 15:04:52.907 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :58   [32m324584946177024   [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-08-18 15:04:52.907 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :80   [32m324584946177024   [0;39m 请求参数: [318234997675008]
+2021-08-18 15:04:52.940 INFO  com.orange_yishenggong.wiki.util.RedisUtil        :28   [32m324584946177024   [0;39m key已存在：DOC_VOTE318234997675008_0:0:0:0:0:0:0:1
+2021-08-18 15:04:52.942 WARN  c.o.wiki.controller.ControllerExceptionHandler    :44   [32m324584946177024   [0;39m 业务异常：您已点赞过
+2021-08-18 15:04:54.412 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :55   [32m324584970851328   [0;39m ------------- 开始 -------------
+2021-08-18 15:04:54.412 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :56   [32m324584970851328   [0;39m 请求地址: http://localhost:8888/category/all GET
+2021-08-18 15:04:54.413 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :57   [32m324584970851328   [0;39m 类名方法: com.orange_yishenggong.wiki.controller.CategoryController.all
+2021-08-18 15:04:54.413 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :58   [32m324584970851328   [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-08-18 15:04:54.413 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :80   [32m324584970851328   [0;39m 请求参数: []
+2021-08-18 15:04:54.413 DEBUG c.o.wiki.mapper.CategoryMapper.selectByExample    :137  [32m324584970851328   [0;39m ==>  Preparing: select id, parent, `name`, sort from category order by sort asc
+2021-08-18 15:04:54.414 DEBUG c.o.wiki.mapper.CategoryMapper.selectByExample    :137  [32m324584970851328   [0;39m ==> Parameters: 
+2021-08-18 15:04:54.414 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584970851328   [0;39m <==    Columns: id, parent, name, sort
+2021-08-18 15:04:54.414 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584970851328   [0;39m <==        Row: 100, 0, 前端开发, 100
+2021-08-18 15:04:54.415 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584970851328   [0;39m <==        Row: 101, 100, Vue, 101
+2021-08-18 15:04:54.415 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584970851328   [0;39m <==        Row: 102, 100, Html, 102
+2021-08-18 15:04:54.415 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584970851328   [0;39m <==        Row: 200, 0, Java, 200
+2021-08-18 15:04:54.415 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584970851328   [0;39m <==        Row: 300, 0, MySql, 200
+2021-08-18 15:04:54.415 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584970851328   [0;39m <==        Row: 201, 200, 基础应用, 201
+2021-08-18 15:04:54.415 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584970851328   [0;39m <==        Row: 202, 200, 框架应用, 202
+2021-08-18 15:04:54.415 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584970851328   [0;39m <==        Row: 301, 300, 数据分析师, 301
+2021-08-18 15:04:54.415 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584970851328   [0;39m <==        Row: 302, 300, 数据工程师, 302
+2021-08-18 15:04:54.416 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584970851328   [0;39m <==        Row: 400, 0, 郭毛毛, 400
+2021-08-18 15:04:54.416 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584970851328   [0;39m <==        Row: 310978500236288, 400, 郭毛毛的大哥, 401
+2021-08-18 15:04:54.416 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324584970851328   [0;39m <==        Row: 311011061306368, 400, 郭毛毛的二哥, 402
+2021-08-18 15:04:54.416 DEBUG c.o.wiki.mapper.CategoryMapper.selectByExample    :137  [32m324584970851328   [0;39m <==      Total: 12
+2021-08-18 15:04:54.416 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :92   [32m324584970851328   [0;39m 返回结果: {"content":[{"id":100,"name":"前端开发","parent":0,"sort":100},{"id":101,"name":"Vue","parent":100,"sort":101},{"id":102,"name":"Html","parent":100,"sort":102},{"id":200,"name":"Java","parent":0,"sort":200},{"id":300,"name":"MySql","parent":0,"sort":200},{"id":201,"name":"基础应用","parent":200,"sort":201},{"id":202,"name":"框架应用","parent":200,"sort":202},{"id":301,"name":"数据分析师","parent":300,"sort":301},{"id":302,"name":"数据工程师","parent":300,"sort":302},{"id":400,"name":"郭毛毛","parent":0,"sort":400},{"id":310978500236288,"name":"郭毛毛的大哥","parent":400,"sort":401},{"id":311011061306368,"name":"郭毛毛的二哥","parent":400,"sort":402}],"success":true}
+2021-08-18 15:04:54.417 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :93   [32m324584970851328   [0;39m ------------- 结束 耗时：5 ms -------------
+2021-08-18 15:05:00.008 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324585062536192   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:05:00.009 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324585062536192   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:05:00.010 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324585062536192   [0;39m ==> Parameters: 
+2021-08-18 15:05:00.024 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324585062536192   [0;39m <==    Updates: 4
+2021-08-18 15:05:00.025 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324585062536192   [0;39m 更新电子书下的文档数据结束，耗时：16毫秒
+2021-08-18 15:05:30.000 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324585553925120   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:05:30.001 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324585553925120   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:05:30.001 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324585553925120   [0;39m ==> Parameters: 
+2021-08-18 15:05:30.002 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324585553925120   [0;39m <==    Updates: 4
+2021-08-18 15:05:30.003 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324585553925120   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:06:00.004 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324586045510656   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:06:00.005 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324586045510656   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:06:00.005 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324586045510656   [0;39m ==> Parameters: 
+2021-08-18 15:06:00.006 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324586045510656   [0;39m <==    Updates: 4
+2021-08-18 15:06:00.007 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324586045510656   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:06:30.013 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324586537178112   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:06:30.014 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324586537178112   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:06:30.014 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324586537178112   [0;39m ==> Parameters: 
+2021-08-18 15:06:30.015 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324586537178112   [0;39m <==    Updates: 4
+2021-08-18 15:06:30.016 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324586537178112   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:07:00.009 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324587028632576   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:07:00.010 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324587028632576   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:07:00.010 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324587028632576   [0;39m ==> Parameters: 
+2021-08-18 15:07:00.011 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324587028632576   [0;39m <==    Updates: 4
+2021-08-18 15:07:00.012 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324587028632576   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:07:30.002 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324587520037888   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:07:30.003 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324587520037888   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:07:30.003 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324587520037888   [0;39m ==> Parameters: 
+2021-08-18 15:07:30.004 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324587520037888   [0;39m <==    Updates: 4
+2021-08-18 15:07:30.005 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324587520037888   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:08:00.002 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324588011557888   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:08:00.003 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324588011557888   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:08:00.004 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324588011557888   [0;39m ==> Parameters: 
+2021-08-18 15:08:00.005 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324588011557888   [0;39m <==    Updates: 4
+2021-08-18 15:08:00.006 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324588011557888   [0;39m 更新电子书下的文档数据结束，耗时：4毫秒
+2021-08-18 15:08:30.002 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324588503077888   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:08:30.003 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324588503077888   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:08:30.003 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324588503077888   [0;39m ==> Parameters: 
+2021-08-18 15:08:30.004 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324588503077888   [0;39m <==    Updates: 4
+2021-08-18 15:08:30.004 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324588503077888   [0;39m 更新电子书下的文档数据结束，耗时：2毫秒
+2021-08-18 15:09:00.016 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324588994827264   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:09:00.017 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324588994827264   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:09:00.017 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324588994827264   [0;39m ==> Parameters: 
+2021-08-18 15:09:00.018 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324588994827264   [0;39m <==    Updates: 4
+2021-08-18 15:09:00.018 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324588994827264   [0;39m 更新电子书下的文档数据结束，耗时：2毫秒
+2021-08-18 15:09:30.001 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324589486101504   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:09:30.002 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324589486101504   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:09:30.002 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324589486101504   [0;39m ==> Parameters: 
+2021-08-18 15:09:30.003 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324589486101504   [0;39m <==    Updates: 4
+2021-08-18 15:09:30.003 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324589486101504   [0;39m 更新电子书下的文档数据结束，耗时：2毫秒
+2021-08-18 15:10:00.010 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324589977768960   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:10:00.012 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324589977768960   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:10:00.013 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324589977768960   [0;39m ==> Parameters: 
+2021-08-18 15:10:00.016 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324589977768960   [0;39m <==    Updates: 4
+2021-08-18 15:10:00.017 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324589977768960   [0;39m 更新电子书下的文档数据结束，耗时：6毫秒
+2021-08-18 15:10:30.003 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324590469174272   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:10:30.004 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324590469174272   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:10:30.004 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324590469174272   [0;39m ==> Parameters: 
+2021-08-18 15:10:30.006 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324590469174272   [0;39m <==    Updates: 4
+2021-08-18 15:10:30.006 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324590469174272   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:11:00.010 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324590960808960   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:11:00.011 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324590960808960   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:11:00.012 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324590960808960   [0;39m ==> Parameters: 
+2021-08-18 15:11:00.013 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324590960808960   [0;39m <==    Updates: 4
+2021-08-18 15:11:00.014 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324590960808960   [0;39m 更新电子书下的文档数据结束，耗时：4毫秒
+2021-08-18 15:11:30.003 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324591452214272   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:11:30.005 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324591452214272   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:11:30.005 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324591452214272   [0;39m ==> Parameters: 
+2021-08-18 15:11:30.007 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324591452214272   [0;39m <==    Updates: 4
+2021-08-18 15:11:30.008 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324591452214272   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:12:00.015 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324591943930880   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:12:00.016 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324591943930880   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:12:00.017 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324591943930880   [0;39m ==> Parameters: 
+2021-08-18 15:12:00.017 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324591943930880   [0;39m <==    Updates: 4
+2021-08-18 15:12:00.018 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324591943930880   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:12:30.016 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324592435467264   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:12:30.017 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324592435467264   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:12:30.017 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324592435467264   [0;39m ==> Parameters: 
+2021-08-18 15:12:30.019 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324592435467264   [0;39m <==    Updates: 4
+2021-08-18 15:12:30.019 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324592435467264   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:13:00.002 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324592926757888   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:13:00.003 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324592926757888   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:13:00.004 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324592926757888   [0;39m ==> Parameters: 
+2021-08-18 15:13:00.006 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324592926757888   [0;39m <==    Updates: 4
+2021-08-18 15:13:00.007 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324592926757888   [0;39m 更新电子书下的文档数据结束，耗时：5毫秒
+2021-08-18 15:13:30.002 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324593418277888   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:13:30.003 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324593418277888   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:13:30.003 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324593418277888   [0;39m ==> Parameters: 
+2021-08-18 15:13:30.004 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324593418277888   [0;39m <==    Updates: 4
+2021-08-18 15:13:30.004 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324593418277888   [0;39m 更新电子书下的文档数据结束，耗时：2毫秒
+2021-08-18 15:14:00.014 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324593909994496   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:14:00.015 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324593909994496   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:14:00.016 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324593909994496   [0;39m ==> Parameters: 
+2021-08-18 15:14:00.017 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324593909994496   [0;39m <==    Updates: 4
+2021-08-18 15:14:00.018 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324593909994496   [0;39m 更新电子书下的文档数据结束，耗时：4毫秒
+2021-08-18 15:14:30.005 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324594401367040   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:14:30.006 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324594401367040   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:14:30.006 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324594401367040   [0;39m ==> Parameters: 
+2021-08-18 15:14:30.007 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324594401367040   [0;39m <==    Updates: 4
+2021-08-18 15:14:30.007 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324594401367040   [0;39m 更新电子书下的文档数据结束，耗时：2毫秒
+2021-08-18 15:15:00.006 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324594892903424   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:15:00.007 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324594892903424   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:15:00.008 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324594892903424   [0;39m ==> Parameters: 
+2021-08-18 15:15:00.009 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324594892903424   [0;39m <==    Updates: 4
+2021-08-18 15:15:00.010 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324594892903424   [0;39m 更新电子书下的文档数据结束，耗时：4毫秒
+2021-08-18 15:15:01.482 INFO  c.o.wiki.websocket.WebSocketServer                :32   [32m324584880133120   [0;39m 有新连接：token：lcunOkZmSo，session id：1，当前连接数：2
+2021-08-18 15:15:30.014 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324595384554496   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:15:30.015 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324595384554496   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:15:30.015 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324595384554496   [0;39m ==> Parameters: 
+2021-08-18 15:15:30.016 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324595384554496   [0;39m <==    Updates: 4
+2021-08-18 15:15:30.016 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324595384554496   [0;39m 更新电子书下的文档数据结束，耗时：2毫秒
+2021-08-18 15:15:54.110 INFO  c.o.wiki.websocket.WebSocketServer                :32   [32m                  [0;39m 有新连接：token：EYrTMZZPdR，session id：2，当前连接数：3
+2021-08-18 15:16:00.013 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324595876058112   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:16:00.014 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324595876058112   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:16:00.015 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324595876058112   [0;39m ==> Parameters: 
+2021-08-18 15:16:00.016 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324595876058112   [0;39m <==    Updates: 4
+2021-08-18 15:16:00.016 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324595876058112   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:16:07.659 INFO  org.hibernate.validator.internal.util.Version     :21   [32m                  [0;39m HV000001: Hibernate Validator 6.2.0.Final
+2021-08-18 15:16:07.669 INFO  com.orange_yishenggong.wiki.config.WikiApplication:55   [32m                  [0;39m Starting WikiApplication using Java 16.0.1 on LAPTOP-GE9IV29P with PID 11304 (C:\Users\Orange Meow\IdeaProjects\wiki\target\classes started by Orange Meow in C:\Users\Orange Meow\IdeaProjects\wiki)
+2021-08-18 15:16:07.669 INFO  com.orange_yishenggong.wiki.config.WikiApplication:663  [32m                  [0;39m No active profile set, falling back to default profiles: default
+2021-08-18 15:16:08.254 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :262  [32m                  [0;39m Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-08-18 15:16:08.256 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :132  [32m                  [0;39m Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-08-18 15:16:08.272 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :201  [32m                  [0;39m Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2021-08-18 15:16:08.813 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 8888 (http)
+2021-08-18 15:16:08.821 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-8888"]
+2021-08-18 15:16:08.822 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-08-18 15:16:08.830 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-08-18 15:16:08.919 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-08-18 15:16:08.919 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :290  [32m                  [0;39m Root WebApplicationContext: initialization completed in 1202 ms
+2021-08-18 15:16:10.020 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Starting ProtocolHandler ["http-nio-8888"]
+2021-08-18 15:16:10.056 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 8888 (http) with context path ''
+2021-08-18 15:16:10.071 INFO  com.orange_yishenggong.wiki.config.WikiApplication:61   [32m                  [0;39m Started WikiApplication in 2.764 seconds (JVM running for 3.35)
+2021-08-18 15:16:10.072 INFO  o.s.boot.availability.ApplicationAvailabilityBean :75   [32m                  [0;39m Application availability state LivenessState changed to CORRECT
+2021-08-18 15:16:10.073 INFO  o.s.boot.availability.ApplicationAvailabilityBean :75   [32m                  [0;39m Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-08-18 15:16:10.074 INFO  com.orange_yishenggong.wiki.config.WikiApplication:22   [32m                  [0;39m 启动成功	:)
+2021-08-18 15:16:10.074 INFO  com.orange_yishenggong.wiki.config.WikiApplication:23   [32m                  [0;39m 地址:	http://127.0.0.1:8888
+2021-08-18 15:16:17.114 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-18 15:16:17.114 INFO  org.springframework.web.servlet.DispatcherServlet :525  [32m                  [0;39m Initializing Servlet 'dispatcherServlet'
+2021-08-18 15:16:17.115 INFO  org.springframework.web.servlet.DispatcherServlet :547  [32m                  [0;39m Completed initialization in 0 ms
+2021-08-18 15:16:17.183 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :55   [32m324596157355008   [0;39m ------------- 开始 -------------
+2021-08-18 15:16:17.184 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :56   [32m324596157355008   [0;39m 请求地址: http://localhost:8888/ebook/list GET
+2021-08-18 15:16:17.184 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :57   [32m324596157355008   [0;39m 类名方法: com.orange_yishenggong.wiki.controller.EbookController.list
+2021-08-18 15:16:17.185 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :58   [32m324596157355008   [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-08-18 15:16:17.226 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :80   [32m324596157355008   [0;39m 请求参数: [{"categoryId2":101,"page":1,"size":1000}]
+2021-08-18 15:16:17.256 INFO  com.zaxxer.hikari.HikariDataSource                :110  [32m324596157355008   [0;39m HikariPool-1 - Starting...
+2021-08-18 15:16:17.445 INFO  com.zaxxer.hikari.HikariDataSource                :123  [32m324596157355008   [0;39m HikariPool-1 - Start completed.
+2021-08-18 15:16:17.473 DEBUG c.o.wiki.mapper.EbookMapper.selectByExample_COUNT :137  [32m324596157355008   [0;39m ==>  Preparing: SELECT count(0) FROM ebook WHERE (category2_id = ?)
+2021-08-18 15:16:17.487 DEBUG c.o.wiki.mapper.EbookMapper.selectByExample_COUNT :137  [32m324596157355008   [0;39m ==> Parameters: 101(Long)
+2021-08-18 15:16:17.502 TRACE c.o.wiki.mapper.EbookMapper.selectByExample_COUNT :143  [32m324596157355008   [0;39m <==    Columns: count(0)
+2021-08-18 15:16:17.503 TRACE c.o.wiki.mapper.EbookMapper.selectByExample_COUNT :143  [32m324596157355008   [0;39m <==        Row: 1
+2021-08-18 15:16:17.504 DEBUG c.o.wiki.mapper.EbookMapper.selectByExample_COUNT :137  [32m324596157355008   [0;39m <==      Total: 1
+2021-08-18 15:16:17.505 DEBUG c.o.wiki.mapper.EbookMapper.selectByExample       :137  [32m324596157355008   [0;39m ==>  Preparing: select id, `name`, category1_id, category2_id, description, cover, doc_count, view_count, vote_count from ebook WHERE ( category2_id = ? ) LIMIT ?
+2021-08-18 15:16:17.506 DEBUG c.o.wiki.mapper.EbookMapper.selectByExample       :137  [32m324596157355008   [0;39m ==> Parameters: 101(Long), 1000(Integer)
+2021-08-18 15:16:17.507 TRACE c.o.wiki.mapper.EbookMapper.selectByExample       :143  [32m324596157355008   [0;39m <==    Columns: id, name, category1_id, category2_id, description, cover, doc_count, view_count, vote_count
+2021-08-18 15:16:17.507 TRACE c.o.wiki.mapper.EbookMapper.selectByExample       :143  [32m324596157355008   [0;39m <==        Row: 4, Vue入门教程, 100, 101, Vue带你写页面, /image/cover4.jpg, 1, 9, 4
+2021-08-18 15:16:17.508 DEBUG c.o.wiki.mapper.EbookMapper.selectByExample       :137  [32m324596157355008   [0;39m <==      Total: 1
+2021-08-18 15:16:17.509 INFO  com.orange_yishenggong.wiki.service.EbookService  :46   [32m324596157355008   [0;39m 总行数:1
+2021-08-18 15:16:17.510 INFO  com.orange_yishenggong.wiki.service.EbookService  :47   [32m324596157355008   [0;39m 总页数:1
+2021-08-18 15:16:17.519 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :92   [32m324596157355008   [0;39m 返回结果: {"content":{"list":[{"category1Id":100,"category2Id":101,"cover":"/image/cover4.jpg","description":"Vue带你写页面","docCount":1,"id":4,"name":"Vue入门教程","viewCount":9,"voteCount":4}],"total":1},"success":true}
+2021-08-18 15:16:17.519 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :93   [32m324596157355008   [0;39m ------------- 结束 耗时：337 ms -------------
+2021-08-18 15:16:17.570 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :55   [32m324596163712000   [0;39m ------------- 开始 -------------
+2021-08-18 15:16:17.571 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :56   [32m324596163712000   [0;39m 请求地址: http://localhost:8888/ebook/list GET
+2021-08-18 15:16:17.571 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :57   [32m324596163712000   [0;39m 类名方法: com.orange_yishenggong.wiki.controller.EbookController.list
+2021-08-18 15:16:17.571 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :58   [32m324596163712000   [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-08-18 15:16:17.571 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :80   [32m324596163712000   [0;39m 请求参数: [{"categoryId2":102,"page":1,"size":1000}]
+2021-08-18 15:16:17.573 DEBUG c.o.wiki.mapper.EbookMapper.selectByExample_COUNT :137  [32m324596163712000   [0;39m ==>  Preparing: SELECT count(0) FROM ebook WHERE (category2_id = ?)
+2021-08-18 15:16:17.573 DEBUG c.o.wiki.mapper.EbookMapper.selectByExample_COUNT :137  [32m324596163712000   [0;39m ==> Parameters: 102(Long)
+2021-08-18 15:16:17.574 TRACE c.o.wiki.mapper.EbookMapper.selectByExample_COUNT :143  [32m324596163712000   [0;39m <==    Columns: count(0)
+2021-08-18 15:16:17.575 TRACE c.o.wiki.mapper.EbookMapper.selectByExample_COUNT :143  [32m324596163712000   [0;39m <==        Row: 1
+2021-08-18 15:16:17.575 DEBUG c.o.wiki.mapper.EbookMapper.selectByExample_COUNT :137  [32m324596163712000   [0;39m <==      Total: 1
+2021-08-18 15:16:17.575 DEBUG c.o.wiki.mapper.EbookMapper.selectByExample       :137  [32m324596163712000   [0;39m ==>  Preparing: select id, `name`, category1_id, category2_id, description, cover, doc_count, view_count, vote_count from ebook WHERE ( category2_id = ? ) LIMIT ?
+2021-08-18 15:16:17.575 DEBUG c.o.wiki.mapper.EbookMapper.selectByExample       :137  [32m324596163712000   [0;39m ==> Parameters: 102(Long), 1000(Integer)
+2021-08-18 15:16:17.576 TRACE c.o.wiki.mapper.EbookMapper.selectByExample       :143  [32m324596163712000   [0;39m <==    Columns: id, name, category1_id, category2_id, description, cover, doc_count, view_count, vote_count
+2021-08-18 15:16:17.576 TRACE c.o.wiki.mapper.EbookMapper.selectByExample       :143  [32m324596163712000   [0;39m <==        Row: 2, JavaScript入门教程, 100, 102, JavaScript和Java是什么关系呢, /image/cover2.png, 5, 34, 2
+2021-08-18 15:16:17.577 DEBUG c.o.wiki.mapper.EbookMapper.selectByExample       :137  [32m324596163712000   [0;39m <==      Total: 1
+2021-08-18 15:16:17.577 INFO  com.orange_yishenggong.wiki.service.EbookService  :46   [32m324596163712000   [0;39m 总行数:1
+2021-08-18 15:16:17.577 INFO  com.orange_yishenggong.wiki.service.EbookService  :47   [32m324596163712000   [0;39m 总页数:1
+2021-08-18 15:16:17.577 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :92   [32m324596163712000   [0;39m 返回结果: {"content":{"list":[{"category1Id":100,"category2Id":102,"cover":"/image/cover2.png","description":"JavaScript和Java是什么关系呢","docCount":5,"id":2,"name":"JavaScript入门教程","viewCount":34,"voteCount":2}],"total":1},"success":true}
+2021-08-18 15:16:17.577 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :93   [32m324596163712000   [0;39m ------------- 结束 耗时：7 ms -------------
+2021-08-18 15:16:18.854 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :55   [32m324596184749056   [0;39m ------------- 开始 -------------
+2021-08-18 15:16:18.854 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :56   [32m324596184749056   [0;39m 请求地址: http://localhost:8888/doc/all/2 GET
+2021-08-18 15:16:18.855 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :57   [32m324596184749056   [0;39m 类名方法: com.orange_yishenggong.wiki.controller.DocController.all
+2021-08-18 15:16:18.855 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :58   [32m324596184749056   [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-08-18 15:16:18.855 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :80   [32m324596184749056   [0;39m 请求参数: [2]
+2021-08-18 15:16:18.861 DEBUG c.o.wiki.mapper.DocMapper.selectByExample         :137  [32m324596184749056   [0;39m ==>  Preparing: select id, parent, ebook_id, `name`, sort, view_count, vote_count from doc WHERE ( ebook_id = ? ) order by sort asc
+2021-08-18 15:16:18.861 DEBUG c.o.wiki.mapper.DocMapper.selectByExample         :137  [32m324596184749056   [0;39m ==> Parameters: 2(Long)
+2021-08-18 15:16:18.862 TRACE c.o.wiki.mapper.DocMapper.selectByExample         :143  [32m324596184749056   [0;39m <==    Columns: id, parent, ebook_id, name, sort, view_count, vote_count
+2021-08-18 15:16:18.862 TRACE c.o.wiki.mapper.DocMapper.selectByExample         :143  [32m324596184749056   [0;39m <==        Row: 316551523570688, 1, 2, 文档1.1, 1, 0, 0
+2021-08-18 15:16:18.863 TRACE c.o.wiki.mapper.DocMapper.selectByExample         :143  [32m324596184749056   [0;39m <==        Row: 317700661384192, 0, 2, 文档3, 10, 17, 0
+2021-08-18 15:16:18.863 TRACE c.o.wiki.mapper.DocMapper.selectByExample         :143  [32m324596184749056   [0;39m <==        Row: 317981141357568, 317700661384192, 2, 文档3.1, 11, 7, 1
+2021-08-18 15:16:18.863 TRACE c.o.wiki.mapper.DocMapper.selectByExample         :143  [32m324596184749056   [0;39m <==        Row: 316652328408064, 4, 2, 文档2.2, 12, 0, 0
+2021-08-18 15:16:18.864 TRACE c.o.wiki.mapper.DocMapper.selectByExample         :143  [32m324596184749056   [0;39m <==        Row: 318100140921856, 317700661384192, 2, 文档3.2, 23, 10, 1
+2021-08-18 15:16:18.864 DEBUG c.o.wiki.mapper.DocMapper.selectByExample         :137  [32m324596184749056   [0;39m <==      Total: 5
+2021-08-18 15:16:18.871 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :92   [32m324596184749056   [0;39m 返回结果: {"content":[{"ebookId":2,"id":316551523570688,"name":"文档1.1","parent":1,"sort":1,"viewCount":0,"voteCount":0},{"ebookId":2,"id":317700661384192,"name":"文档3","parent":0,"sort":10,"viewCount":17,"voteCount":0},{"ebookId":2,"id":317981141357568,"name":"文档3.1","parent":317700661384192,"sort":11,"viewCount":7,"voteCount":1},{"ebookId":2,"id":316652328408064,"name":"文档2.2","parent":4,"sort":12,"viewCount":0,"voteCount":0},{"ebookId":2,"id":318100140921856,"name":"文档3.2","parent":317700661384192,"sort":23,"viewCount":10,"voteCount":1}],"success":true}
+2021-08-18 15:16:18.872 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :93   [32m324596184749056   [0;39m ------------- 结束 耗时：19 ms -------------
+2021-08-18 15:16:18.888 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :55   [32m324596185306112   [0;39m ------------- 开始 -------------
+2021-08-18 15:16:18.888 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :56   [32m324596185306112   [0;39m 请求地址: http://localhost:8888/doc/content/317700661384192 GET
+2021-08-18 15:16:18.889 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :57   [32m324596185306112   [0;39m 类名方法: com.orange_yishenggong.wiki.controller.DocController.content
+2021-08-18 15:16:18.889 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :58   [32m324596185306112   [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-08-18 15:16:18.889 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :80   [32m324596185306112   [0;39m 请求参数: [317700661384192]
+2021-08-18 15:16:18.889 DEBUG c.o.wiki.mapper.ContentMapper.selectByPrimaryKey  :137  [32m324596185306112   [0;39m ==>  Preparing: select id , content from content where id = ?
+2021-08-18 15:16:18.890 DEBUG c.o.wiki.mapper.ContentMapper.selectByPrimaryKey  :137  [32m324596185306112   [0;39m ==> Parameters: 317700661384192(Long)
+2021-08-18 15:16:18.892 TRACE c.o.wiki.mapper.ContentMapper.selectByPrimaryKey  :143  [32m324596185306112   [0;39m <==    Columns: id, content
+2021-08-18 15:16:18.892 TRACE c.o.wiki.mapper.ContentMapper.selectByPrimaryKey  :143  [32m324596185306112   [0;39m <==        Row: 317700661384192, <<BLOB>>
+2021-08-18 15:16:18.893 DEBUG c.o.wiki.mapper.ContentMapper.selectByPrimaryKey  :137  [32m324596185306112   [0;39m <==      Total: 1
+2021-08-18 15:16:18.894 DEBUG c.o.wiki.mapper.DocMapperCust.incrViewCount       :137  [32m324596185306112   [0;39m ==>  Preparing: update doc set view_count = view_count+1 where id = ?
+2021-08-18 15:16:18.894 DEBUG c.o.wiki.mapper.DocMapperCust.incrViewCount       :137  [32m324596185306112   [0;39m ==> Parameters: 317700661384192(Long)
+2021-08-18 15:16:18.897 DEBUG c.o.wiki.mapper.DocMapperCust.incrViewCount       :137  [32m324596185306112   [0;39m <==    Updates: 1
+2021-08-18 15:16:18.898 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :92   [32m324596185306112   [0;39m 返回结果: {"content":"<h1 id=\"o1sck\"><b>test</b></h1>","success":true}
+2021-08-18 15:16:18.898 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :93   [32m324596185306112   [0;39m ------------- 结束 耗时：10 ms -------------
+2021-08-18 15:16:21.345 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :55   [32m324596225561600   [0;39m ------------- 开始 -------------
+2021-08-18 15:16:21.345 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :56   [32m324596225561600   [0;39m 请求地址: http://localhost:8888/doc/vote/317700661384192 GET
+2021-08-18 15:16:21.345 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :57   [32m324596225561600   [0;39m 类名方法: com.orange_yishenggong.wiki.controller.DocController.vote
+2021-08-18 15:16:21.346 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :58   [32m324596225561600   [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-08-18 15:16:21.346 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :80   [32m324596225561600   [0;39m 请求参数: [317700661384192]
+2021-08-18 15:16:21.821 INFO  com.orange_yishenggong.wiki.util.RedisUtil        :31   [32m324596225561600   [0;39m key不存在，放入：DOC_VOTE317700661384192_0:0:0:0:0:0:0:1，过期 86400 秒
+2021-08-18 15:16:21.859 DEBUG c.o.wiki.mapper.DocMapperCust.incrVoteCount       :137  [32m324596225561600   [0;39m ==>  Preparing: update doc set vote_count = vote_count+1 where id = ?
+2021-08-18 15:16:21.859 DEBUG c.o.wiki.mapper.DocMapperCust.incrVoteCount       :137  [32m324596225561600   [0;39m ==> Parameters: 317700661384192(Long)
+2021-08-18 15:16:21.863 DEBUG c.o.wiki.mapper.DocMapperCust.incrVoteCount       :137  [32m324596225561600   [0;39m <==    Updates: 1
+2021-08-18 15:16:21.863 DEBUG c.o.wiki.mapper.DocMapper.selectByPrimaryKey      :137  [32m324596225561600   [0;39m ==>  Preparing: select id, parent, ebook_id, `name`, sort, view_count, vote_count from doc where id = ?
+2021-08-18 15:16:21.863 DEBUG c.o.wiki.mapper.DocMapper.selectByPrimaryKey      :137  [32m324596225561600   [0;39m ==> Parameters: 317700661384192(Long)
+2021-08-18 15:16:21.864 TRACE c.o.wiki.mapper.DocMapper.selectByPrimaryKey      :143  [32m324596225561600   [0;39m <==    Columns: id, parent, ebook_id, name, sort, view_count, vote_count
+2021-08-18 15:16:21.864 TRACE c.o.wiki.mapper.DocMapper.selectByPrimaryKey      :143  [32m324596225561600   [0;39m <==        Row: 317700661384192, 0, 2, 文档3, 10, 18, 1
+2021-08-18 15:16:21.865 DEBUG c.o.wiki.mapper.DocMapper.selectByPrimaryKey      :137  [32m324596225561600   [0;39m <==      Total: 1
+2021-08-18 15:16:21.865 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :92   [32m324596225561600   [0;39m 返回结果: {"success":true}
+2021-08-18 15:16:21.866 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :93   [32m324596225561600   [0;39m ------------- 结束 耗时：521 ms -------------
+2021-08-18 15:16:30.005 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324596367447040   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:16:30.006 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324596367447040   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:16:30.007 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324596367447040   [0;39m ==> Parameters: 
+2021-08-18 15:16:30.011 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324596367447040   [0;39m <==    Updates: 4
+2021-08-18 15:16:30.011 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324596367447040   [0;39m 更新电子书下的文档数据结束，耗时：6毫秒
+2021-08-18 15:16:35.046 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :55   [32m324596450038784   [0;39m ------------- 开始 -------------
+2021-08-18 15:16:35.046 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :56   [32m324596450038784   [0;39m 请求地址: http://localhost:8888/doc/vote/317700661384192 GET
+2021-08-18 15:16:35.046 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :57   [32m324596450038784   [0;39m 类名方法: com.orange_yishenggong.wiki.controller.DocController.vote
+2021-08-18 15:16:35.047 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :58   [32m324596450038784   [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-08-18 15:16:35.047 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :80   [32m324596450038784   [0;39m 请求参数: [317700661384192]
+2021-08-18 15:16:35.081 INFO  com.orange_yishenggong.wiki.util.RedisUtil        :28   [32m324596450038784   [0;39m key已存在：DOC_VOTE317700661384192_0:0:0:0:0:0:0:1
+2021-08-18 15:16:35.084 WARN  c.o.wiki.controller.ControllerExceptionHandler    :44   [32m324596450038784   [0;39m 业务异常：您已点赞过
+2021-08-18 15:17:00.003 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324596858934272   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:17:00.004 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324596858934272   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:17:00.005 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324596858934272   [0;39m ==> Parameters: 
+2021-08-18 15:17:00.006 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324596858934272   [0;39m <==    Updates: 4
+2021-08-18 15:17:00.007 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324596858934272   [0;39m 更新电子书下的文档数据结束，耗时：4毫秒
+2021-08-18 15:17:30.008 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324597350536192   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:17:30.009 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324597350536192   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:17:30.010 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324597350536192   [0;39m ==> Parameters: 
+2021-08-18 15:17:30.011 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324597350536192   [0;39m <==    Updates: 4
+2021-08-18 15:17:30.011 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324597350536192   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:17:35.401 INFO  c.o.wiki.websocket.WebSocketServer                :32   [32m                  [0;39m 有新连接：token：kW1Hvkwo8m，session id：0，当前连接数：1
+2021-08-18 15:17:43.188 INFO  c.o.wiki.websocket.WebSocketServer                :32   [32m                  [0;39m 有新连接：token：BE04y8A4ZA，session id：1，当前连接数：2
+2021-08-18 15:18:00.010 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324597842088960   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:18:00.012 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324597842088960   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:18:00.013 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324597842088960   [0;39m ==> Parameters: 
+2021-08-18 15:18:00.014 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324597842088960   [0;39m <==    Updates: 4
+2021-08-18 15:18:00.015 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324597842088960   [0;39m 更新电子书下的文档数据结束，耗时：4毫秒
+2021-08-18 15:18:02.445 INFO  c.o.wiki.websocket.WebSocketServer                :32   [32m324596184749056   [0;39m 有新连接：token：6gVgyKrEM3，session id：2，当前连接数：3
+2021-08-18 15:18:04.588 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :55   [32m324597917094912   [0;39m ------------- 开始 -------------
+2021-08-18 15:18:04.588 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :56   [32m324597917094912   [0;39m 请求地址: http://localhost:8888/doc/content/317981141357568 GET
+2021-08-18 15:18:04.589 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :57   [32m324597917094912   [0;39m 类名方法: com.orange_yishenggong.wiki.controller.DocController.content
+2021-08-18 15:18:04.589 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :58   [32m324597917094912   [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-08-18 15:18:04.589 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :80   [32m324597917094912   [0;39m 请求参数: [317981141357568]
+2021-08-18 15:18:04.590 DEBUG c.o.wiki.mapper.ContentMapper.selectByPrimaryKey  :137  [32m324597917094912   [0;39m ==>  Preparing: select id , content from content where id = ?
+2021-08-18 15:18:04.590 DEBUG c.o.wiki.mapper.ContentMapper.selectByPrimaryKey  :137  [32m324597917094912   [0;39m ==> Parameters: 317981141357568(Long)
+2021-08-18 15:18:04.591 TRACE c.o.wiki.mapper.ContentMapper.selectByPrimaryKey  :143  [32m324597917094912   [0;39m <==    Columns: id, content
+2021-08-18 15:18:04.592 TRACE c.o.wiki.mapper.ContentMapper.selectByPrimaryKey  :143  [32m324597917094912   [0;39m <==        Row: 317981141357568, <<BLOB>>
+2021-08-18 15:18:04.592 DEBUG c.o.wiki.mapper.ContentMapper.selectByPrimaryKey  :137  [32m324597917094912   [0;39m <==      Total: 1
+2021-08-18 15:18:04.592 DEBUG c.o.wiki.mapper.DocMapperCust.incrViewCount       :137  [32m324597917094912   [0;39m ==>  Preparing: update doc set view_count = view_count+1 where id = ?
+2021-08-18 15:18:04.592 DEBUG c.o.wiki.mapper.DocMapperCust.incrViewCount       :137  [32m324597917094912   [0;39m ==> Parameters: 317981141357568(Long)
+2021-08-18 15:18:04.597 DEBUG c.o.wiki.mapper.DocMapperCust.incrViewCount       :137  [32m324597917094912   [0;39m <==    Updates: 1
+2021-08-18 15:18:04.597 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :92   [32m324597917094912   [0;39m 返回结果: {"content":"<p>test</p>","success":true}
+2021-08-18 15:18:04.597 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :93   [32m324597917094912   [0;39m ------------- 结束 耗时：9 ms -------------
+2021-08-18 15:18:05.373 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :55   [32m324597929956352   [0;39m ------------- 开始 -------------
+2021-08-18 15:18:05.373 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :56   [32m324597929956352   [0;39m 请求地址: http://localhost:8888/doc/content/318100140921856 GET
+2021-08-18 15:18:05.373 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :57   [32m324597929956352   [0;39m 类名方法: com.orange_yishenggong.wiki.controller.DocController.content
+2021-08-18 15:18:05.373 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :58   [32m324597929956352   [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-08-18 15:18:05.373 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :80   [32m324597929956352   [0;39m 请求参数: [318100140921856]
+2021-08-18 15:18:05.374 DEBUG c.o.wiki.mapper.ContentMapper.selectByPrimaryKey  :137  [32m324597929956352   [0;39m ==>  Preparing: select id , content from content where id = ?
+2021-08-18 15:18:05.375 DEBUG c.o.wiki.mapper.ContentMapper.selectByPrimaryKey  :137  [32m324597929956352   [0;39m ==> Parameters: 318100140921856(Long)
+2021-08-18 15:18:05.376 TRACE c.o.wiki.mapper.ContentMapper.selectByPrimaryKey  :143  [32m324597929956352   [0;39m <==    Columns: id, content
+2021-08-18 15:18:05.376 TRACE c.o.wiki.mapper.ContentMapper.selectByPrimaryKey  :143  [32m324597929956352   [0;39m <==        Row: 318100140921856, <<BLOB>>
+2021-08-18 15:18:05.376 DEBUG c.o.wiki.mapper.ContentMapper.selectByPrimaryKey  :137  [32m324597929956352   [0;39m <==      Total: 1
+2021-08-18 15:18:05.376 DEBUG c.o.wiki.mapper.DocMapperCust.incrViewCount       :137  [32m324597929956352   [0;39m ==>  Preparing: update doc set view_count = view_count+1 where id = ?
+2021-08-18 15:18:05.377 DEBUG c.o.wiki.mapper.DocMapperCust.incrViewCount       :137  [32m324597929956352   [0;39m ==> Parameters: 318100140921856(Long)
+2021-08-18 15:18:05.379 DEBUG c.o.wiki.mapper.DocMapperCust.incrViewCount       :137  [32m324597929956352   [0;39m <==    Updates: 1
+2021-08-18 15:18:05.380 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :92   [32m324597929956352   [0;39m 返回结果: {"content":"<p>test</p><h1 id=\"l9xl9\">test&nbsp;</h1><h2 id=\"6a2vy\">test</h2><h3 id=\"9m0dc\">test</h3><h4 id=\"atmyp\">test</h4><h5 id=\"iadh7\">test</h5><p>test</p><p><b>test</b></p><p><font size=\"7\">test</font></p><p><font face=\"标楷体\"><i>test</i></font><font size=\"7\"><br/></font></p><p><font face=\"标楷体\" color=\"#eeece0\"><i>test</i></font></p><p><font face=\"标楷体\" color=\"#eeece0\"><i><br/></i></font></p><pre><font color=\"#c24f4a\">.wangeditorStyle </font></pre><pre>.wangeditorStyle <font color=\"#c24f4a\"><br/></font></pre><p><span style=\"background-color: rgb(0, 0, 0);\"></span><a href=\"https://www.wangeditor.com/doc/pages/02-%E5%86%85%E5%AE%B9%E5%A4%84%E7%90%86/03-%E8%8E%B7%E5%8F%96html.html\" target=\"_blank\" style=\"background-color: rgb(255, 255, 255); font-size: 14px;\">https://www.wangeditor.com/doc/pages/02-%E5%86%85%E5%AE%B9%E5%A4%84%E7%90%86/03-%E8%8E%B7%E5%8F%96html.html</a><br/></p><ul class=\"w-e-todo\"><li><span contenteditable=\"false\"><input type=\"checkbox\"/></span>dsasad</li></ul><ul class=\"w-e-todo\"><li><span contenteditable=\"false\"><input type=\"checkbox\" checked=\"true\"/></span>hj</li></ul><blockquote><p>sdasda</p></blockquote><blockquote><p>sdadsa</p></blockquote><p>😉<span style=\"font-size: 14px;\">😘</span><span style=\"font-size: 14px;\">🤣</span><br/></p><pre><code class=\"Java\"><xmp>saddddd</xmp><hr/><p><br/></p></code></pre>","success":true}
+2021-08-18 15:18:05.380 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :93   [32m324597929956352   [0;39m ------------- 结束 耗时：7 ms -------------
+2021-08-18 15:18:07.212 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :55   [32m324597960086528   [0;39m ------------- 开始 -------------
+2021-08-18 15:18:07.212 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :56   [32m324597960086528   [0;39m 请求地址: http://localhost:8888/doc/vote/318100140921856 GET
+2021-08-18 15:18:07.212 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :57   [32m324597960086528   [0;39m 类名方法: com.orange_yishenggong.wiki.controller.DocController.vote
+2021-08-18 15:18:07.213 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :58   [32m324597960086528   [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-08-18 15:18:07.213 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :80   [32m324597960086528   [0;39m 请求参数: [318100140921856]
+2021-08-18 15:18:07.247 INFO  com.orange_yishenggong.wiki.util.RedisUtil        :28   [32m324597960086528   [0;39m key已存在：DOC_VOTE318100140921856_0:0:0:0:0:0:0:1
+2021-08-18 15:18:07.248 WARN  c.o.wiki.controller.ControllerExceptionHandler    :44   [32m324597960086528   [0;39m 业务异常：您已点赞过
+2021-08-18 15:18:09.562 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :55   [32m324597998588928   [0;39m ------------- 开始 -------------
+2021-08-18 15:18:09.563 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :56   [32m324597998588928   [0;39m 请求地址: http://localhost:8888/category/all GET
+2021-08-18 15:18:09.563 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :57   [32m324597998588928   [0;39m 类名方法: com.orange_yishenggong.wiki.controller.CategoryController.all
+2021-08-18 15:18:09.563 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :58   [32m324597998588928   [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-08-18 15:18:09.563 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :80   [32m324597998588928   [0;39m 请求参数: []
+2021-08-18 15:18:09.568 DEBUG c.o.wiki.mapper.CategoryMapper.selectByExample    :137  [32m324597998588928   [0;39m ==>  Preparing: select id, parent, `name`, sort from category order by sort asc
+2021-08-18 15:18:09.568 DEBUG c.o.wiki.mapper.CategoryMapper.selectByExample    :137  [32m324597998588928   [0;39m ==> Parameters: 
+2021-08-18 15:18:09.570 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324597998588928   [0;39m <==    Columns: id, parent, name, sort
+2021-08-18 15:18:09.571 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324597998588928   [0;39m <==        Row: 100, 0, 前端开发, 100
+2021-08-18 15:18:09.571 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324597998588928   [0;39m <==        Row: 101, 100, Vue, 101
+2021-08-18 15:18:09.572 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324597998588928   [0;39m <==        Row: 102, 100, Html, 102
+2021-08-18 15:18:09.572 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324597998588928   [0;39m <==        Row: 200, 0, Java, 200
+2021-08-18 15:18:09.572 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324597998588928   [0;39m <==        Row: 300, 0, MySql, 200
+2021-08-18 15:18:09.572 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324597998588928   [0;39m <==        Row: 201, 200, 基础应用, 201
+2021-08-18 15:18:09.572 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324597998588928   [0;39m <==        Row: 202, 200, 框架应用, 202
+2021-08-18 15:18:09.574 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324597998588928   [0;39m <==        Row: 301, 300, 数据分析师, 301
+2021-08-18 15:18:09.574 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324597998588928   [0;39m <==        Row: 302, 300, 数据工程师, 302
+2021-08-18 15:18:09.574 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324597998588928   [0;39m <==        Row: 400, 0, 郭毛毛, 400
+2021-08-18 15:18:09.575 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324597998588928   [0;39m <==        Row: 310978500236288, 400, 郭毛毛的大哥, 401
+2021-08-18 15:18:09.575 TRACE c.o.wiki.mapper.CategoryMapper.selectByExample    :143  [32m324597998588928   [0;39m <==        Row: 311011061306368, 400, 郭毛毛的二哥, 402
+2021-08-18 15:18:09.575 DEBUG c.o.wiki.mapper.CategoryMapper.selectByExample    :137  [32m324597998588928   [0;39m <==      Total: 12
+2021-08-18 15:18:09.581 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :92   [32m324597998588928   [0;39m 返回结果: {"content":[{"id":100,"name":"前端开发","parent":0,"sort":100},{"id":101,"name":"Vue","parent":100,"sort":101},{"id":102,"name":"Html","parent":100,"sort":102},{"id":200,"name":"Java","parent":0,"sort":200},{"id":300,"name":"MySql","parent":0,"sort":200},{"id":201,"name":"基础应用","parent":200,"sort":201},{"id":202,"name":"框架应用","parent":200,"sort":202},{"id":301,"name":"数据分析师","parent":300,"sort":301},{"id":302,"name":"数据工程师","parent":300,"sort":302},{"id":400,"name":"郭毛毛","parent":0,"sort":400},{"id":310978500236288,"name":"郭毛毛的大哥","parent":400,"sort":401},{"id":311011061306368,"name":"郭毛毛的二哥","parent":400,"sort":402}],"success":true}
+2021-08-18 15:18:09.581 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :93   [32m324597998588928   [0;39m ------------- 结束 耗时：19 ms -------------
+2021-08-18 15:18:11.220 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :55   [32m324598025753600   [0;39m ------------- 开始 -------------
+2021-08-18 15:18:11.221 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :56   [32m324598025753600   [0;39m 请求地址: http://localhost:8888/ebook/list GET
+2021-08-18 15:18:11.221 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :57   [32m324598025753600   [0;39m 类名方法: com.orange_yishenggong.wiki.controller.EbookController.list
+2021-08-18 15:18:11.221 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :58   [32m324598025753600   [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-08-18 15:18:11.221 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :80   [32m324598025753600   [0;39m 请求参数: [{"categoryId2":310978500236288,"page":1,"size":1000}]
+2021-08-18 15:18:11.223 DEBUG c.o.wiki.mapper.EbookMapper.selectByExample_COUNT :137  [32m324598025753600   [0;39m ==>  Preparing: SELECT count(0) FROM ebook WHERE (category2_id = ?)
+2021-08-18 15:18:11.223 DEBUG c.o.wiki.mapper.EbookMapper.selectByExample_COUNT :137  [32m324598025753600   [0;39m ==> Parameters: 310978500236288(Long)
+2021-08-18 15:18:11.224 TRACE c.o.wiki.mapper.EbookMapper.selectByExample_COUNT :143  [32m324598025753600   [0;39m <==    Columns: count(0)
+2021-08-18 15:18:11.224 TRACE c.o.wiki.mapper.EbookMapper.selectByExample_COUNT :143  [32m324598025753600   [0;39m <==        Row: 4
+2021-08-18 15:18:11.224 DEBUG c.o.wiki.mapper.EbookMapper.selectByExample_COUNT :137  [32m324598025753600   [0;39m <==      Total: 1
+2021-08-18 15:18:11.225 DEBUG c.o.wiki.mapper.EbookMapper.selectByExample       :137  [32m324598025753600   [0;39m ==>  Preparing: select id, `name`, category1_id, category2_id, description, cover, doc_count, view_count, vote_count from ebook WHERE ( category2_id = ? ) LIMIT ?
+2021-08-18 15:18:11.225 DEBUG c.o.wiki.mapper.EbookMapper.selectByExample       :137  [32m324598025753600   [0;39m ==> Parameters: 310978500236288(Long), 1000(Integer)
+2021-08-18 15:18:11.225 TRACE c.o.wiki.mapper.EbookMapper.selectByExample       :143  [32m324598025753600   [0;39m <==    Columns: id, name, category1_id, category2_id, description, cover, doc_count, view_count, vote_count
+2021-08-18 15:18:11.226 TRACE c.o.wiki.mapper.EbookMapper.selectByExample       :143  [32m324598025753600   [0;39m <==        Row: 7, 橘猪染色教程, 400, 310978500236288, 想拥有一只橘橘胖胖的猪吗, /image/cover7.jpg, 4, 17, 3
+2021-08-18 15:18:11.226 TRACE c.o.wiki.mapper.EbookMapper.selectByExample       :143  [32m324598025753600   [0;39m <==        Row: 8, 郭毛毛养成教程, 400, 310978500236288, 吃喝睡玩每一天, /image/cover8.png, 43566, 0, 0
+2021-08-18 15:18:11.226 TRACE c.o.wiki.mapper.EbookMapper.selectByExample       :143  [32m324598025753600   [0;39m <==        Row: 310498949125120, 习近平语录, 400, 310978500236288, 庆丰包子铺里拉清单, http://www.qstheory.cn/zhuanqu/2021-05/07/1127415864_16203503598951n.jpg, null, null, null
+2021-08-18 15:18:11.226 TRACE c.o.wiki.mapper.EbookMapper.selectByExample       :143  [32m324598025753600   [0;39m <==        Row: 316342541620224, test8, 400, 310978500236288, null, null, null, null, null
+2021-08-18 15:18:11.227 DEBUG c.o.wiki.mapper.EbookMapper.selectByExample       :137  [32m324598025753600   [0;39m <==      Total: 4
+2021-08-18 15:18:11.227 INFO  com.orange_yishenggong.wiki.service.EbookService  :46   [32m324598025753600   [0;39m 总行数:4
+2021-08-18 15:18:11.227 INFO  com.orange_yishenggong.wiki.service.EbookService  :47   [32m324598025753600   [0;39m 总页数:1
+2021-08-18 15:18:11.227 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :92   [32m324598025753600   [0;39m 返回结果: {"content":{"list":[{"category1Id":400,"category2Id":310978500236288,"cover":"/image/cover7.jpg","description":"想拥有一只橘橘胖胖的猪吗","docCount":4,"id":7,"name":"橘猪染色教程","viewCount":17,"voteCount":3},{"category1Id":400,"category2Id":310978500236288,"cover":"/image/cover8.png","description":"吃喝睡玩每一天","docCount":43566,"id":8,"name":"郭毛毛养成教程","viewCount":0,"voteCount":0},{"category1Id":400,"category2Id":310978500236288,"cover":"http://www.qstheory.cn/zhuanqu/2021-05/07/1127415864_16203503598951n.jpg","description":"庆丰包子铺里拉清单","id":310498949125120,"name":"习近平语录"},{"category1Id":400,"category2Id":310978500236288,"id":316342541620224,"name":"test8"}],"total":4},"success":true}
+2021-08-18 15:18:11.227 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :93   [32m324598025753600   [0;39m ------------- 结束 耗时：7 ms -------------
+2021-08-18 15:18:12.031 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :55   [32m324598039041024   [0;39m ------------- 开始 -------------
+2021-08-18 15:18:12.031 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :56   [32m324598039041024   [0;39m 请求地址: http://localhost:8888/doc/all/7 GET
+2021-08-18 15:18:12.031 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :57   [32m324598039041024   [0;39m 类名方法: com.orange_yishenggong.wiki.controller.DocController.all
+2021-08-18 15:18:12.032 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :58   [32m324598039041024   [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-08-18 15:18:12.032 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :80   [32m324598039041024   [0;39m 请求参数: [7]
+2021-08-18 15:18:12.033 DEBUG c.o.wiki.mapper.DocMapper.selectByExample         :137  [32m324598039041024   [0;39m ==>  Preparing: select id, parent, ebook_id, `name`, sort, view_count, vote_count from doc WHERE ( ebook_id = ? ) order by sort asc
+2021-08-18 15:18:12.033 DEBUG c.o.wiki.mapper.DocMapper.selectByExample         :137  [32m324598039041024   [0;39m ==> Parameters: 7(Long)
+2021-08-18 15:18:12.034 TRACE c.o.wiki.mapper.DocMapper.selectByExample         :143  [32m324598039041024   [0;39m <==    Columns: id, parent, ebook_id, name, sort, view_count, vote_count
+2021-08-18 15:18:12.035 TRACE c.o.wiki.mapper.DocMapper.selectByExample         :143  [32m324598039041024   [0;39m <==        Row: 1, 0, 7, 文档1, 1, 10, 1
+2021-08-18 15:18:12.035 TRACE c.o.wiki.mapper.DocMapper.selectByExample         :143  [32m324598039041024   [0;39m <==        Row: 3, 1, 7, 文档1.2, 3, 4, 1
+2021-08-18 15:18:12.035 TRACE c.o.wiki.mapper.DocMapper.selectByExample         :143  [32m324598039041024   [0;39m <==        Row: 4, 0, 7, 文档2, 4, 1, 0
+2021-08-18 15:18:12.036 TRACE c.o.wiki.mapper.DocMapper.selectByExample         :143  [32m324598039041024   [0;39m <==        Row: 5, 4, 7, 文档2.1, 5, 2, 1
+2021-08-18 15:18:12.036 DEBUG c.o.wiki.mapper.DocMapper.selectByExample         :137  [32m324598039041024   [0;39m <==      Total: 4
+2021-08-18 15:18:12.036 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :92   [32m324598039041024   [0;39m 返回结果: {"content":[{"ebookId":7,"id":1,"name":"文档1","parent":0,"sort":1,"viewCount":10,"voteCount":1},{"ebookId":7,"id":3,"name":"文档1.2","parent":1,"sort":3,"viewCount":4,"voteCount":1},{"ebookId":7,"id":4,"name":"文档2","parent":0,"sort":4,"viewCount":1,"voteCount":0},{"ebookId":7,"id":5,"name":"文档2.1","parent":4,"sort":5,"viewCount":2,"voteCount":1}],"success":true}
+2021-08-18 15:18:12.036 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :93   [32m324598039041024   [0;39m ------------- 结束 耗时：5 ms -------------
+2021-08-18 15:18:12.049 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :55   [32m324598039335936   [0;39m ------------- 开始 -------------
+2021-08-18 15:18:12.049 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :56   [32m324598039335936   [0;39m 请求地址: http://localhost:8888/doc/content/1 GET
+2021-08-18 15:18:12.049 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :57   [32m324598039335936   [0;39m 类名方法: com.orange_yishenggong.wiki.controller.DocController.content
+2021-08-18 15:18:12.049 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :58   [32m324598039335936   [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-08-18 15:18:12.050 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :80   [32m324598039335936   [0;39m 请求参数: [1]
+2021-08-18 15:18:12.050 DEBUG c.o.wiki.mapper.ContentMapper.selectByPrimaryKey  :137  [32m324598039335936   [0;39m ==>  Preparing: select id , content from content where id = ?
+2021-08-18 15:18:12.050 DEBUG c.o.wiki.mapper.ContentMapper.selectByPrimaryKey  :137  [32m324598039335936   [0;39m ==> Parameters: 1(Long)
+2021-08-18 15:18:12.051 TRACE c.o.wiki.mapper.ContentMapper.selectByPrimaryKey  :143  [32m324598039335936   [0;39m <==    Columns: id, content
+2021-08-18 15:18:12.051 TRACE c.o.wiki.mapper.ContentMapper.selectByPrimaryKey  :143  [32m324598039335936   [0;39m <==        Row: 1, <<BLOB>>
+2021-08-18 15:18:12.051 DEBUG c.o.wiki.mapper.ContentMapper.selectByPrimaryKey  :137  [32m324598039335936   [0;39m <==      Total: 1
+2021-08-18 15:18:12.052 DEBUG c.o.wiki.mapper.DocMapperCust.incrViewCount       :137  [32m324598039335936   [0;39m ==>  Preparing: update doc set view_count = view_count+1 where id = ?
+2021-08-18 15:18:12.052 DEBUG c.o.wiki.mapper.DocMapperCust.incrViewCount       :137  [32m324598039335936   [0;39m ==> Parameters: 1(Long)
+2021-08-18 15:18:12.054 DEBUG c.o.wiki.mapper.DocMapperCust.incrViewCount       :137  [32m324598039335936   [0;39m <==    Updates: 1
+2021-08-18 15:18:12.054 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :92   [32m324598039335936   [0;39m 返回结果: {"content":"<p>111</p>","success":true}
+2021-08-18 15:18:12.054 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :93   [32m324598039335936   [0;39m ------------- 结束 耗时：5 ms -------------
+2021-08-18 15:18:13.084 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :55   [32m324598056293376   [0;39m ------------- 开始 -------------
+2021-08-18 15:18:13.085 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :56   [32m324598056293376   [0;39m 请求地址: http://localhost:8888/doc/vote/1 GET
+2021-08-18 15:18:13.085 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :57   [32m324598056293376   [0;39m 类名方法: com.orange_yishenggong.wiki.controller.DocController.vote
+2021-08-18 15:18:13.085 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :58   [32m324598056293376   [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-08-18 15:18:13.085 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :80   [32m324598056293376   [0;39m 请求参数: [1]
+2021-08-18 15:18:13.119 INFO  com.orange_yishenggong.wiki.util.RedisUtil        :28   [32m324598056293376   [0;39m key已存在：DOC_VOTE1_0:0:0:0:0:0:0:1
+2021-08-18 15:18:13.120 WARN  c.o.wiki.controller.ControllerExceptionHandler    :44   [32m324598056293376   [0;39m 业务异常：您已点赞过
+2021-08-18 15:18:14.455 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :55   [32m324598078755840   [0;39m ------------- 开始 -------------
+2021-08-18 15:18:14.456 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :56   [32m324598078755840   [0;39m 请求地址: http://localhost:8888/doc/content/3 GET
+2021-08-18 15:18:14.456 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :57   [32m324598078755840   [0;39m 类名方法: com.orange_yishenggong.wiki.controller.DocController.content
+2021-08-18 15:18:14.459 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :58   [32m324598078755840   [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-08-18 15:18:14.459 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :80   [32m324598078755840   [0;39m 请求参数: [3]
+2021-08-18 15:18:14.460 DEBUG c.o.wiki.mapper.ContentMapper.selectByPrimaryKey  :137  [32m324598078755840   [0;39m ==>  Preparing: select id , content from content where id = ?
+2021-08-18 15:18:14.460 DEBUG c.o.wiki.mapper.ContentMapper.selectByPrimaryKey  :137  [32m324598078755840   [0;39m ==> Parameters: 3(Long)
+2021-08-18 15:18:14.463 TRACE c.o.wiki.mapper.ContentMapper.selectByPrimaryKey  :143  [32m324598078755840   [0;39m <==    Columns: id, content
+2021-08-18 15:18:14.463 TRACE c.o.wiki.mapper.ContentMapper.selectByPrimaryKey  :143  [32m324598078755840   [0;39m <==        Row: 3, <<BLOB>>
+2021-08-18 15:18:14.463 DEBUG c.o.wiki.mapper.ContentMapper.selectByPrimaryKey  :137  [32m324598078755840   [0;39m <==      Total: 1
+2021-08-18 15:18:14.464 DEBUG c.o.wiki.mapper.DocMapperCust.incrViewCount       :137  [32m324598078755840   [0;39m ==>  Preparing: update doc set view_count = view_count+1 where id = ?
+2021-08-18 15:18:14.464 DEBUG c.o.wiki.mapper.DocMapperCust.incrViewCount       :137  [32m324598078755840   [0;39m ==> Parameters: 3(Long)
+2021-08-18 15:18:14.468 DEBUG c.o.wiki.mapper.DocMapperCust.incrViewCount       :137  [32m324598078755840   [0;39m <==    Updates: 1
+2021-08-18 15:18:14.468 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :92   [32m324598078755840   [0;39m 返回结果: {"content":"<p>test</p>","success":true}
+2021-08-18 15:18:14.469 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :93   [32m324598078755840   [0;39m ------------- 结束 耗时：14 ms -------------
+2021-08-18 15:18:15.252 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :55   [32m324598091813888   [0;39m ------------- 开始 -------------
+2021-08-18 15:18:15.252 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :56   [32m324598091813888   [0;39m 请求地址: http://localhost:8888/doc/vote/3 GET
+2021-08-18 15:18:15.252 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :57   [32m324598091813888   [0;39m 类名方法: com.orange_yishenggong.wiki.controller.DocController.vote
+2021-08-18 15:18:15.252 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :58   [32m324598091813888   [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-08-18 15:18:15.252 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :80   [32m324598091813888   [0;39m 请求参数: [3]
+2021-08-18 15:18:15.286 INFO  com.orange_yishenggong.wiki.util.RedisUtil        :28   [32m324598091813888   [0;39m key已存在：DOC_VOTE3_0:0:0:0:0:0:0:1
+2021-08-18 15:18:15.287 WARN  c.o.wiki.controller.ControllerExceptionHandler    :44   [32m324598091813888   [0;39m 业务异常：您已点赞过
+2021-08-18 15:18:16.436 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :55   [32m324598111212544   [0;39m ------------- 开始 -------------
+2021-08-18 15:18:16.436 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :56   [32m324598111212544   [0;39m 请求地址: http://localhost:8888/doc/content/4 GET
+2021-08-18 15:18:16.436 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :57   [32m324598111212544   [0;39m 类名方法: com.orange_yishenggong.wiki.controller.DocController.content
+2021-08-18 15:18:16.436 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :58   [32m324598111212544   [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-08-18 15:18:16.437 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :80   [32m324598111212544   [0;39m 请求参数: [4]
+2021-08-18 15:18:16.437 DEBUG c.o.wiki.mapper.ContentMapper.selectByPrimaryKey  :137  [32m324598111212544   [0;39m ==>  Preparing: select id , content from content where id = ?
+2021-08-18 15:18:16.438 DEBUG c.o.wiki.mapper.ContentMapper.selectByPrimaryKey  :137  [32m324598111212544   [0;39m ==> Parameters: 4(Long)
+2021-08-18 15:18:16.439 TRACE c.o.wiki.mapper.ContentMapper.selectByPrimaryKey  :143  [32m324598111212544   [0;39m <==    Columns: id, content
+2021-08-18 15:18:16.439 TRACE c.o.wiki.mapper.ContentMapper.selectByPrimaryKey  :143  [32m324598111212544   [0;39m <==        Row: 4, <<BLOB>>
+2021-08-18 15:18:16.439 DEBUG c.o.wiki.mapper.ContentMapper.selectByPrimaryKey  :137  [32m324598111212544   [0;39m <==      Total: 1
+2021-08-18 15:18:16.440 DEBUG c.o.wiki.mapper.DocMapperCust.incrViewCount       :137  [32m324598111212544   [0;39m ==>  Preparing: update doc set view_count = view_count+1 where id = ?
+2021-08-18 15:18:16.440 DEBUG c.o.wiki.mapper.DocMapperCust.incrViewCount       :137  [32m324598111212544   [0;39m ==> Parameters: 4(Long)
+2021-08-18 15:18:16.443 DEBUG c.o.wiki.mapper.DocMapperCust.incrViewCount       :137  [32m324598111212544   [0;39m <==    Updates: 1
+2021-08-18 15:18:16.443 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :92   [32m324598111212544   [0;39m 返回结果: {"content":"<p>test</p>","success":true}
+2021-08-18 15:18:16.443 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :93   [32m324598111212544   [0;39m ------------- 结束 耗时：7 ms -------------
+2021-08-18 15:18:17.627 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :55   [32m324598130725888   [0;39m ------------- 开始 -------------
+2021-08-18 15:18:17.628 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :56   [32m324598130725888   [0;39m 请求地址: http://localhost:8888/doc/vote/4 GET
+2021-08-18 15:18:17.628 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :57   [32m324598130725888   [0;39m 类名方法: com.orange_yishenggong.wiki.controller.DocController.vote
+2021-08-18 15:18:17.628 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :58   [32m324598130725888   [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-08-18 15:18:17.628 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :80   [32m324598130725888   [0;39m 请求参数: [4]
+2021-08-18 15:18:17.662 INFO  com.orange_yishenggong.wiki.util.RedisUtil        :31   [32m324598130725888   [0;39m key不存在，放入：DOC_VOTE4_0:0:0:0:0:0:0:1，过期 86400 秒
+2021-08-18 15:18:17.698 DEBUG c.o.wiki.mapper.DocMapperCust.incrVoteCount       :137  [32m324598130725888   [0;39m ==>  Preparing: update doc set vote_count = vote_count+1 where id = ?
+2021-08-18 15:18:17.698 DEBUG c.o.wiki.mapper.DocMapperCust.incrVoteCount       :137  [32m324598130725888   [0;39m ==> Parameters: 4(Long)
+2021-08-18 15:18:17.701 DEBUG c.o.wiki.mapper.DocMapperCust.incrVoteCount       :137  [32m324598130725888   [0;39m <==    Updates: 1
+2021-08-18 15:18:17.702 DEBUG c.o.wiki.mapper.DocMapper.selectByPrimaryKey      :137  [32m324598130725888   [0;39m ==>  Preparing: select id, parent, ebook_id, `name`, sort, view_count, vote_count from doc where id = ?
+2021-08-18 15:18:17.702 DEBUG c.o.wiki.mapper.DocMapper.selectByPrimaryKey      :137  [32m324598130725888   [0;39m ==> Parameters: 4(Long)
+2021-08-18 15:18:17.703 TRACE c.o.wiki.mapper.DocMapper.selectByPrimaryKey      :143  [32m324598130725888   [0;39m <==    Columns: id, parent, ebook_id, name, sort, view_count, vote_count
+2021-08-18 15:18:17.703 TRACE c.o.wiki.mapper.DocMapper.selectByPrimaryKey      :143  [32m324598130725888   [0;39m <==        Row: 4, 0, 7, 文档2, 4, 2, 1
+2021-08-18 15:18:17.703 DEBUG c.o.wiki.mapper.DocMapper.selectByPrimaryKey      :137  [32m324598130725888   [0;39m <==      Total: 1
+2021-08-18 15:18:17.707 INFO  c.o.wiki.websocket.WebSocketServer                :71   [32m324598130725888   [0;39m 推送消息：kW1Hvkwo8m，内容：[文档2]被点赞！
+2021-08-18 15:18:17.707 INFO  c.o.wiki.websocket.WebSocketServer                :71   [32m324598130725888   [0;39m 推送消息：6gVgyKrEM3，内容：[文档2]被点赞！
+2021-08-18 15:18:17.707 INFO  c.o.wiki.websocket.WebSocketServer                :71   [32m324598130725888   [0;39m 推送消息：BE04y8A4ZA，内容：[文档2]被点赞！
+2021-08-18 15:18:17.708 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :92   [32m324598130725888   [0;39m 返回结果: {"success":true}
+2021-08-18 15:18:17.708 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :93   [32m324598130725888   [0;39m ------------- 结束 耗时：81 ms -------------
+2021-08-18 15:18:30.001 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324598333461504   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:18:30.002 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324598333461504   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:18:30.002 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324598333461504   [0;39m ==> Parameters: 
+2021-08-18 15:18:30.006 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324598333461504   [0;39m <==    Updates: 4
+2021-08-18 15:18:30.007 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324598333461504   [0;39m 更新电子书下的文档数据结束，耗时：6毫秒
+2021-08-18 15:19:00.011 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324598825145344   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:19:00.012 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324598825145344   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:19:00.012 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324598825145344   [0;39m ==> Parameters: 
+2021-08-18 15:19:00.013 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324598825145344   [0;39m <==    Updates: 4
+2021-08-18 15:19:00.014 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324598825145344   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:19:30.006 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324599316583424   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:19:30.007 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324599316583424   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:19:30.008 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324599316583424   [0;39m ==> Parameters: 
+2021-08-18 15:19:30.009 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324599316583424   [0;39m <==    Updates: 4
+2021-08-18 15:19:30.009 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324599316583424   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:20:00.003 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324599808054272   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:20:00.004 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324599808054272   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:20:00.005 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324599808054272   [0;39m ==> Parameters: 
+2021-08-18 15:20:00.006 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324599808054272   [0;39m <==    Updates: 4
+2021-08-18 15:20:00.007 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324599808054272   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:20:30.015 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324600299770880   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:20:30.016 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324600299770880   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:20:30.016 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324600299770880   [0;39m ==> Parameters: 
+2021-08-18 15:20:30.017 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324600299770880   [0;39m <==    Updates: 4
+2021-08-18 15:20:30.018 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324600299770880   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:21:00.005 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324600791127040   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:21:00.006 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324600791127040   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:21:00.006 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324600791127040   [0;39m ==> Parameters: 
+2021-08-18 15:21:00.008 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324600791127040   [0;39m <==    Updates: 4
+2021-08-18 15:21:00.008 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324600791127040   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:21:30.010 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324601282728960   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:21:30.011 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324601282728960   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:21:30.011 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324601282728960   [0;39m ==> Parameters: 
+2021-08-18 15:21:30.012 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324601282728960   [0;39m <==    Updates: 4
+2021-08-18 15:21:30.013 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324601282728960   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:22:00.003 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324601774134272   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:22:00.004 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324601774134272   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:22:00.005 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324601774134272   [0;39m ==> Parameters: 
+2021-08-18 15:22:00.006 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324601774134272   [0;39m <==    Updates: 4
+2021-08-18 15:22:00.006 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324601774134272   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:22:17.704 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :55   [32m324602064147456   [0;39m ------------- 开始 -------------
+2021-08-18 15:22:17.704 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :56   [32m324602064147456   [0;39m 请求地址: http://localhost:8888/doc/vote/4 GET
+2021-08-18 15:22:17.705 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :57   [32m324602064147456   [0;39m 类名方法: com.orange_yishenggong.wiki.controller.DocController.vote
+2021-08-18 15:22:17.705 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :58   [32m324602064147456   [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-08-18 15:22:17.705 INFO  com.orange_yishenggong.wiki.aspect.LogAspect      :80   [32m324602064147456   [0;39m 请求参数: [4]
+2021-08-18 15:22:17.738 INFO  com.orange_yishenggong.wiki.util.RedisUtil        :28   [32m324602064147456   [0;39m key已存在：DOC_VOTE4_0:0:0:0:0:0:0:1
+2021-08-18 15:22:17.739 WARN  c.o.wiki.controller.ControllerExceptionHandler    :44   [32m324602064147456   [0;39m 业务异常：您已点赞过
+2021-08-18 15:22:30.013 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324602265818112   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:22:30.014 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324602265818112   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:22:30.014 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324602265818112   [0;39m ==> Parameters: 
+2021-08-18 15:22:30.015 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324602265818112   [0;39m <==    Updates: 4
+2021-08-18 15:22:30.016 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324602265818112   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:23:00.010 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324602757288960   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:23:00.011 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324602757288960   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:23:00.012 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324602757288960   [0;39m ==> Parameters: 
+2021-08-18 15:23:00.013 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324602757288960   [0;39m <==    Updates: 4
+2021-08-18 15:23:00.013 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324602757288960   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:23:12.516 INFO  c.o.wiki.websocket.WebSocketServer                :41   [32m324596163712000   [0;39m 连接关闭，token：kW1Hvkwo8m，session id：0！当前连接数：1
+2021-08-18 15:23:12.516 INFO  c.o.wiki.websocket.WebSocketServer                :41   [32m324598078755840   [0;39m 连接关闭，token：BE04y8A4ZA，session id：1！当前连接数：2
+2021-08-18 15:23:12.516 INFO  c.o.wiki.websocket.WebSocketServer                :41   [32m324597960086528   [0;39m 连接关闭，token：6gVgyKrEM3，session id：2！当前连接数：2
+2021-08-18 15:23:30.013 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324603248858112   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:23:30.014 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324603248858112   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:23:30.014 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324603248858112   [0;39m ==> Parameters: 
+2021-08-18 15:23:30.015 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324603248858112   [0;39m <==    Updates: 4
+2021-08-18 15:23:30.015 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324603248858112   [0;39m 更新电子书下的文档数据结束，耗时：2毫秒
+2021-08-18 15:24:00.001 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324603740181504   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:24:00.002 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324603740181504   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:24:00.003 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324603740181504   [0;39m ==> Parameters: 
+2021-08-18 15:24:00.004 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324603740181504   [0;39m <==    Updates: 4
+2021-08-18 15:24:00.004 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324603740181504   [0;39m 更新电子书下的文档数据结束，耗时：2毫秒
+2021-08-18 15:24:30.015 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324604231930880   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:24:30.016 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324604231930880   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:24:30.016 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324604231930880   [0;39m ==> Parameters: 
+2021-08-18 15:24:30.017 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324604231930880   [0;39m <==    Updates: 4
+2021-08-18 15:24:30.017 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324604231930880   [0;39m 更新电子书下的文档数据结束，耗时：2毫秒
+2021-08-18 15:25:00.006 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324604723303424   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:25:00.007 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324604723303424   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:25:00.007 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324604723303424   [0;39m ==> Parameters: 
+2021-08-18 15:25:00.009 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324604723303424   [0;39m <==    Updates: 4
+2021-08-18 15:25:00.009 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324604723303424   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:25:30.011 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324605214905344   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:25:30.012 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324605214905344   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:25:30.012 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324605214905344   [0;39m ==> Parameters: 
+2021-08-18 15:25:30.013 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324605214905344   [0;39m <==    Updates: 4
+2021-08-18 15:25:30.014 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324605214905344   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:26:00.004 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324605706310656   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:26:00.005 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324605706310656   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:26:00.005 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324605706310656   [0;39m ==> Parameters: 
+2021-08-18 15:26:00.006 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324605706310656   [0;39m <==    Updates: 4
+2021-08-18 15:26:00.007 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324605706310656   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:26:30.001 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324606197781504   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:26:30.002 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324606197781504   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:26:30.002 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324606197781504   [0;39m ==> Parameters: 
+2021-08-18 15:26:30.003 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324606197781504   [0;39m <==    Updates: 4
+2021-08-18 15:26:30.003 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324606197781504   [0;39m 更新电子书下的文档数据结束，耗时：2毫秒
+2021-08-18 15:27:00.005 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324606689367040   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:27:00.006 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324606689367040   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:27:00.006 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324606689367040   [0;39m ==> Parameters: 
+2021-08-18 15:27:00.008 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324606689367040   [0;39m <==    Updates: 4
+2021-08-18 15:27:00.008 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324606689367040   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:27:30.014 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324607181034496   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:27:30.015 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324607181034496   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:27:30.015 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324607181034496   [0;39m ==> Parameters: 
+2021-08-18 15:27:30.016 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324607181034496   [0;39m <==    Updates: 4
+2021-08-18 15:27:30.016 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324607181034496   [0;39m 更新电子书下的文档数据结束，耗时：2毫秒
+2021-08-18 15:28:00.013 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324607672538112   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:28:00.014 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324607672538112   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:28:00.015 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324607672538112   [0;39m ==> Parameters: 
+2021-08-18 15:28:00.016 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324607672538112   [0;39m <==    Updates: 4
+2021-08-18 15:28:00.016 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324607672538112   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:28:30.001 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324608163861504   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:28:30.002 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324608163861504   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:28:30.002 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324608163861504   [0;39m ==> Parameters: 
+2021-08-18 15:28:30.003 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324608163861504   [0;39m <==    Updates: 4
+2021-08-18 15:28:30.004 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324608163861504   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:29:00.007 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324608655479808   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:29:00.008 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324608655479808   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:29:00.008 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324608655479808   [0;39m ==> Parameters: 
+2021-08-18 15:29:00.010 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324608655479808   [0;39m <==    Updates: 4
+2021-08-18 15:29:00.010 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324608655479808   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:29:30.006 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324609146983424   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:29:30.007 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324609146983424   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:29:30.007 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324609146983424   [0;39m ==> Parameters: 
+2021-08-18 15:29:30.008 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324609146983424   [0;39m <==    Updates: 4
+2021-08-18 15:29:30.008 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324609146983424   [0;39m 更新电子书下的文档数据结束，耗时：2毫秒
+2021-08-18 15:30:00.014 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324609638634496   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:30:00.015 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324609638634496   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:30:00.015 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324609638634496   [0;39m ==> Parameters: 
+2021-08-18 15:30:00.017 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324609638634496   [0;39m <==    Updates: 4
+2021-08-18 15:30:00.017 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324609638634496   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:30:30.005 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324610130007040   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:30:30.006 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324610130007040   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:30:30.006 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324610130007040   [0;39m ==> Parameters: 
+2021-08-18 15:30:30.007 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324610130007040   [0;39m <==    Updates: 4
+2021-08-18 15:30:30.007 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324610130007040   [0;39m 更新电子书下的文档数据结束，耗时：2毫秒
+2021-08-18 15:31:00.001 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324610621461504   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:31:00.002 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324610621461504   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:31:00.002 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324610621461504   [0;39m ==> Parameters: 
+2021-08-18 15:31:00.003 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324610621461504   [0;39m <==    Updates: 4
+2021-08-18 15:31:00.004 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324610621461504   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:31:30.007 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324611113079808   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:31:30.008 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324611113079808   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:31:30.008 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324611113079808   [0;39m ==> Parameters: 
+2021-08-18 15:31:30.009 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324611113079808   [0;39m <==    Updates: 4
+2021-08-18 15:31:30.009 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324611113079808   [0;39m 更新电子书下的文档数据结束，耗时：2毫秒
+2021-08-18 15:32:00.016 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324611604747264   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:32:00.017 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324611604747264   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:32:00.017 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324611604747264   [0;39m ==> Parameters: 
+2021-08-18 15:32:00.018 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324611604747264   [0;39m <==    Updates: 4
+2021-08-18 15:32:00.018 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324611604747264   [0;39m 更新电子书下的文档数据结束，耗时：2毫秒
+2021-08-18 15:32:30.005 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324612096087040   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:32:30.006 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324612096087040   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:32:30.006 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324612096087040   [0;39m ==> Parameters: 
+2021-08-18 15:32:30.007 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324612096087040   [0;39m <==    Updates: 4
+2021-08-18 15:32:30.008 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324612096087040   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:33:00.012 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324612587721728   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:33:00.013 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324612587721728   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:33:00.013 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324612587721728   [0;39m ==> Parameters: 
+2021-08-18 15:33:00.015 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324612587721728   [0;39m <==    Updates: 4
+2021-08-18 15:33:00.015 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324612587721728   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:33:30.011 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324613079225344   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:33:30.012 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324613079225344   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:33:30.012 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324613079225344   [0;39m ==> Parameters: 
+2021-08-18 15:33:30.013 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324613079225344   [0;39m <==    Updates: 4
+2021-08-18 15:33:30.013 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324613079225344   [0;39m 更新电子书下的文档数据结束，耗时：2毫秒
+2021-08-18 15:34:00.014 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324613570794496   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:34:00.015 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324613570794496   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:34:00.015 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324613570794496   [0;39m ==> Parameters: 
+2021-08-18 15:34:00.016 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324613570794496   [0;39m <==    Updates: 4
+2021-08-18 15:34:00.017 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324613570794496   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:34:30.012 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324614062281728   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:34:30.013 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324614062281728   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:34:30.013 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324614062281728   [0;39m ==> Parameters: 
+2021-08-18 15:34:30.014 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324614062281728   [0;39m <==    Updates: 4
+2021-08-18 15:34:30.015 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324614062281728   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:35:00.014 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324614553834496   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:35:00.015 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324614553834496   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:35:00.015 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324614553834496   [0;39m ==> Parameters: 
+2021-08-18 15:35:00.017 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324614553834496   [0;39m <==    Updates: 4
+2021-08-18 15:35:00.017 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324614553834496   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:35:30.016 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324615045387264   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:35:30.017 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324615045387264   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:35:30.017 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324615045387264   [0;39m ==> Parameters: 
+2021-08-18 15:35:30.018 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324615045387264   [0;39m <==    Updates: 4
+2021-08-18 15:35:30.019 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324615045387264   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:36:00.004 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324615536710656   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:36:00.005 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324615536710656   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:36:00.005 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324615536710656   [0;39m ==> Parameters: 
+2021-08-18 15:36:00.007 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324615536710656   [0;39m <==    Updates: 4
+2021-08-18 15:36:00.007 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324615536710656   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:36:30.003 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324616028214272   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:36:30.004 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324616028214272   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:36:30.004 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324616028214272   [0;39m ==> Parameters: 
+2021-08-18 15:36:30.005 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324616028214272   [0;39m <==    Updates: 4
+2021-08-18 15:36:30.006 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324616028214272   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:37:00.014 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324616519914496   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:37:00.015 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324616519914496   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:37:00.015 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324616519914496   [0;39m ==> Parameters: 
+2021-08-18 15:37:00.017 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324616519914496   [0;39m <==    Updates: 4
+2021-08-18 15:37:00.017 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324616519914496   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:37:30.004 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324617011270656   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:37:30.005 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324617011270656   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:37:30.005 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324617011270656   [0;39m ==> Parameters: 
+2021-08-18 15:37:30.006 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324617011270656   [0;39m <==    Updates: 4
+2021-08-18 15:37:30.006 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324617011270656   [0;39m 更新电子书下的文档数据结束，耗时：2毫秒
+2021-08-18 15:38:00.015 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324617502970880   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:38:00.016 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324617502970880   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:38:00.016 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324617502970880   [0;39m ==> Parameters: 
+2021-08-18 15:38:00.017 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324617502970880   [0;39m <==    Updates: 4
+2021-08-18 15:38:00.017 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324617502970880   [0;39m 更新电子书下的文档数据结束，耗时：2毫秒
+2021-08-18 15:38:30.001 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324617994261504   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:38:30.002 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324617994261504   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:38:30.003 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324617994261504   [0;39m ==> Parameters: 
+2021-08-18 15:38:30.004 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324617994261504   [0;39m <==    Updates: 4
+2021-08-18 15:38:30.004 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324617994261504   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:39:00.006 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324618485863424   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:39:00.007 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324618485863424   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:39:00.007 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324618485863424   [0;39m ==> Parameters: 
+2021-08-18 15:39:00.008 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324618485863424   [0;39m <==    Updates: 4
+2021-08-18 15:39:00.009 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324618485863424   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
+2021-08-18 15:39:30.003 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324618977334272   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:39:30.004 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324618977334272   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:39:30.004 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324618977334272   [0;39m ==> Parameters: 
+2021-08-18 15:39:30.005 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324618977334272   [0;39m <==    Updates: 4
+2021-08-18 15:39:30.005 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324618977334272   [0;39m 更新电子书下的文档数据结束，耗时：2毫秒
+2021-08-18 15:40:00.006 INFO  com.orange_yishenggong.wiki.job.DocJob            :32   [32m324619468903424   [0;39m 更新电子书下的文档数据开始
+2021-08-18 15:40:00.007 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324619468903424   [0;39m ==>  Preparing: update ebook t1, (select ebook_id, count(1) doc_count, sum(view_count) view_count, sum(vote_count) vote_count from doc group by ebook_id) t2 set t1.doc_count = t2.doc_count, t1.view_count = t2.view_count, t1.vote_count = t2.vote_count where t1.id = t2.ebook_id
+2021-08-18 15:40:00.007 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324619468903424   [0;39m ==> Parameters: 
+2021-08-18 15:40:00.008 DEBUG c.o.wiki.mapper.DocMapperCust.updateEbookInfo     :137  [32m324619468903424   [0;39m <==    Updates: 4
+2021-08-18 15:40:00.009 INFO  com.orange_yishenggong.wiki.job.DocJob            :35   [32m324619468903424   [0;39m 更新电子书下的文档数据结束，耗时：3毫秒
