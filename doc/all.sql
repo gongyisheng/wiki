@@ -125,5 +125,17 @@ group by
 set t1.doc_count = t2.doc_count,
     t1.view_count = t2.view_count,
     t1.vote_count = t2.vote_count
-where t1.id = t2.ebook_id
+where t1.id = t2.ebook_id;
 
+#snapshot
+drop table if exists `ebook_snapshot`;
+create table `ebook_snapshot` (
+    `id` bigint auto_increment not null comment 'id',
+    `ebook_id` bigint not null default 0 comment '电子书id',
+    `date` date not null default 0 comment '快照日期',
+    `view_count` bigint not null default 0 comment '阅读数',
+    `vote_count`bigint not null default 0 comment '点赞数',
+    `view_increase` bigint not null default 0 comment '阅读增长',
+    `vote_increase` bigint not null default 0 comment '点赞增长',
+    primary key (`id`)
+) engine = innodb default charset = utf8mb4 comment = '电子书快照表';
