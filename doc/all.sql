@@ -205,8 +205,6 @@ set t1.view_count = t2.view_count,
 where t1.`date` = curdate()
   and t1.ebook_id = t2.id;
 
-
-
 update ebook_snapshot t1 left join (select ebook_id, view_count, vote_count
                           from ebook_snapshot
                           where `date` = date_sub(curdate(), interval 1 day)) t2
