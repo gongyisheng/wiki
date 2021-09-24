@@ -11,7 +11,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 @RestController
-@RequestMapping
+@RequestMapping("/ebook-snapshot")
 public class EbookSnapshotController {
 
     @Resource
