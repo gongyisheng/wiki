@@ -27,3 +27,8 @@ Accept: application/json
 ###
 GET http://localhost:8888/redis/get/320411241305088
 Accept: application/json
+
+###
+GET http://localhost:8888/ebook-snapshot/get-statistic
+Accept: application/json
+
